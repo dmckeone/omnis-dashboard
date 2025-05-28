@@ -1,0 +1,116 @@
+# vim: ft=yaml
+
+# https://docs.gitlab.com/ce/ci/variables/README.html
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+  LANG: en_US.UTF-8
+  docker_registry: docker-registry.west.artsman.com
+  verdaccio_registry: verdaccio.artsman.com
+  node_base: node:18
+  output_image: ${docker_registry}/artsman/omnis-dashboard
+
+stages:
+  - dependencies
+  - assemble
+  - test
+  - build
+  - histoire
+
+.before_script: &before_script
+  - export reqs_hash=`cat <(echo ${node_base}) package-lock.json | sha1sum | cut -b1-10`
+  - export output_image=${output_image}
+
+# Create cache point with all install Javascript dependencies.  See: Dockerfile - base
+build-node-modules:
+  stage: dependencies
+  image: ${docker_registry}/public/alpine:latest
+  script:
+    # inject the common before script
+    - *before_script
+
+    - reqs_tag=${output_image}:${reqs_hash}
+
+    - echo "building and pushing $reqs_tag"
+    - docker pull ${reqs_tag} || true
+
+    - DOCKER_BUILDKIT=1 docker build
+      --target base
+      --build-arg="BUILDKIT_INLINE_CACHE=1"
+      --build-arg="docker_registry=${docker_registry}/public/"
+      --build-arg="node_base=${node_base}"
+      --build-arg="verdaccio_token=${verdaccio_token}"
+      --build-arg="verdaccio_registry=${verdaccio_registry}"
+      --cache-from ${reqs_tag}
+      -t ${reqs_tag}
+      -f Dockerfile
+      .
+    - docker push ${reqs_tag}
+
+    - echo "REQS_TAG=${reqs_tag}" >> build.env
+  artifacts:
+    reports:
+      dotenv: build.env
+
+# Create cache point with application content in place.  See: Dockerfile - app
+build-app:
+  stage: assemble
+  image: ${docker_registry}/public/alpine:latest
+  script:
+    # inject the common before script
+    - *before_script
+
+    - app_tag=${output_image}:app-${CI_COMMIT_SHORT_SHA}
+
+    - echo "building and pushing app_tag"
+    - docker pull ${app_tag} || true
+
+    - DOCKER_BUILDKIT=1 docker build
+      --target app
+      --build-arg="BUILDKIT_INLINE_CACHE=1"
+      --build-arg="node_base=${node_base}"
+      --build-arg="verdaccio_token=${verdaccio_token}"
+      --build-arg="verdaccio_registry=${verdaccio_registry}"
+      --cache-from ${REQS_TAG}
+      --cache-from ${app_tag}
+      -t ${app_tag}
+      -f Dockerfile
+      .
+    - docker push ${app_tag}
+
+    - echo "APP_TAG=${app_tag}" >> build.env
+  artifacts:
+    reports:
+      dotenv: build.env
+
+# Build the production library (for importing into other projects)
+build-modules:
+  stage: build
+  image: ${APP_TAG}
+  script:
+    - DEPLOY_OUTPUT=$(pwd)
+    - cd /app
+    - npm run build
+    - mv dist $DEPLOY_OUTPUT/omnis-dashboard
+  artifacts:
+    paths:
+      - omnis-dashboard
+  only:
+    - tags
+    - main
+
+# Build histoire output for GitLab Pages
+pages:
+  stage: histoire
+  image: ${APP_TAG}
+  script:
+    - DEPLOY_OUTPUT=$(pwd)
+    - cd /app
+    - npm run story:build-ci
+    - mkdir -p $DEPLOY_OUTPUT/public
+    - mv .histoire/dist/* $DEPLOY_OUTPUT/public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main

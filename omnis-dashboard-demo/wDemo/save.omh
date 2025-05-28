@@ -1,0 +1,18 @@
+Calculate panels as OJSON.$jsontolistorrow(iPanelsJSON)
+
+# Assign theme to all charts on panel
+For Col from 1 to panels.$colcount step 1
+	Set reference PanelRef to panels.C[Col].$ref
+	If PanelRef.type='echart'
+		Calculate PanelRef.theme as iThemes.theme
+	End If
+End For
+
+
+Do EncodeRow.$define(columns,rows,panels)
+Calculate EncodeRow.columns as 2
+Calculate EncodeRow.rows as 3
+Calculate EncodeRow.panels as panels
+
+Calculate iDashboardJSON as OJSON.$listorrowtojson(EncodeRow,kUniTypeCharacter)
+Do iBrowserRef.$redraw()

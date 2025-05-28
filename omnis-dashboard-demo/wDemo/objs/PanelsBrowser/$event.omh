@@ -1,0 +1,24 @@
+On evBrowserStartDownload
+	Calculate Path as pSuggestedName
+	Do FileOps.$putfilename(Path) Returns Success
+	If Success
+		Do iBrowserRef.$startdownload(pDownloadId,Path)
+		
+		Do FileOps.$splitpathname(Path,,,FileName,FileExtension)
+		Do iDownloads.$add(pDownloadId,con(FileName,FileExtension),'')
+	Else
+		Do iBrowserRef.$canceldownload(pDownloadId)
+	End If
+	
+On evBrowserDownloadProgress
+	# Progress
+	
+On evBrowserFinishedDownload
+	# Finished
+	
+	
+On evControlEvent
+	If pInfo.event='update-panels'
+		Calculate iPanelsJSON as OJSON.$formatjson(pInfo.payload)
+		Redraw iPanelsJSON
+	End If

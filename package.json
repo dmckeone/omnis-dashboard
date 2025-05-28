@@ -1,0 +1,63 @@
+{
+  "name": "omnis-dashboard",
+  "version": "0.0.4",
+  "type": "module",
+  "scripts": {
+    "build": "npm run type-check && vite build && mkdir dist/omnis-dashboard && mv dist/omnis-dashboard.html dist/omnis-dashboard/omnis-dashboard.htm",
+    "watch": "vite build --watch",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
+    "format": "prettier --write .",
+    "story:dev": "histoire dev",
+    "story:build": "histoire build",
+    "story:build-ci": "histoire build -c histoire-ci.config.ts",
+    "story:preview": "histoire preview",
+    "type-check": "vue-tsc -p tsconfig.app.json --noEmit --composite false",
+    "type-watch": "vue-tsc --watch -p tsconfig.app.json --noEmit --composite false",
+    "precommit-msg": "echo 'Pre-commit checks...' && exit 0"
+  },
+  "pre-commit": [
+    "precommit-msg",
+    "format",
+    "lint"
+  ],
+  "dependencies": {
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@types/echarts": "^5.0.0",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "@vueuse/core": "^13.3.0",
+    "daisyui": "^4.12.24",
+    "echarts": "^5.6.0",
+    "pinia": "^3.0.2",
+    "vue": "^3.5.15",
+    "vue-draggable-plus": "^0.6.0",
+    "vue-echarts": "^7.0.3"
+  },
+  "devDependencies": {
+    "@histoire/plugin-vue": "^1.0.0-alpha.2",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tsconfig/node18": "^18.2.4",
+    "@types/node": "^22.15.23",
+    "@vitejs/plugin-vue": "^5.2.4",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "@vue/eslint-config-typescript": "^14.5.0",
+    "@vue/language-server": "^2.2.10",
+    "@vue/tsconfig": "^0.7.0",
+    "autoprefixer": "^10.4.21",
+    "copyfiles": "^2.4.1",
+    "eslint": "^9.27.0",
+    "eslint-plugin-vue": "^10.1.0",
+    "histoire": "^1.0.0-alpha.2",
+    "postcss": "^8.5.3",
+    "postcss-import": "^16.1.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^3.5.3",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5",
+    "vite-plugin-html": "^3.2.2",
+    "vite-plugin-multiple": "^0.2.0",
+    "vite-plugin-singlefile": "^2.2.0",
+    "vite-plugin-static-copy": "3.0.0",
+    "vue-tsc": "^2.2.10"
+  }
+}
