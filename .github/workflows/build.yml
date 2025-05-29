@@ -1,4 +1,4 @@
-name: Build bundle
+name: Build Controls
 
 on: [push]
 

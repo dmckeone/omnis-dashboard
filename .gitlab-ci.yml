@@ -106,7 +106,7 @@ pages:
   script:
     - DEPLOY_OUTPUT=$(pwd)
     - cd /app
-    - npm run story:build-ci
+    - HISTOIRE_PATH_PREFIX=/omnis-dashboard/ npm run story:build-ci
     - mkdir -p $DEPLOY_OUTPUT/public
     - mv .histoire/dist/* $DEPLOY_OUTPUT/public
   artifacts:
