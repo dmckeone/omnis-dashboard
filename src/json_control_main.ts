@@ -76,6 +76,8 @@ window.ctrl_omnis_dashboard.prototype = (function () {
 
     // Set properties -- https://www.omnis.net/developers/resources/onlinedocs/index.jsp?detail=JavaScriptSDK/06js_api.html#allowdefaultdrophandling
     this.allowDefaultDropHandling = true
+    this.customDragHandling = true
+    this.customDropHandling = true
 
     // call our superclass init_ctrl_inst
     this.superclass.init_ctrl_inst.call(this, form, elem, rowCtrl, rowNumber)
