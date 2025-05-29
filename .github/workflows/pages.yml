@@ -2,11 +2,25 @@ name: Build Histoire Pages
 
 on: [push]
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build-pages:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
       - name: Bundle Component with Vite
         uses: actions/setup-node@v3
         with:
@@ -14,7 +28,7 @@ jobs:
           cache: "npm"
       - run: |
           npm ci
-          npm run story:build-ci --if-present
+          HISTOIRE_PATH_PREFIX=/omnis-dashboard/ npm run story:build-ci --if-present
           mv .histoire/dist public
       - name: Upload static files as artifact
         id: deployment
@@ -28,11 +42,6 @@ jobs:
     # Add a dependency to the build job
     needs: build-pages
 
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
-    permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
-
     # Deploy to the github-pages environment
     environment:
       name: github-pages
@@ -42,4 +51,4 @@ jobs:
     - name: Deploy to GitHub Pages
       if: startsWith(github.ref, 'refs/tags/')
       id: deployment
-      uses: actions/deploy-pages@v4]
+      uses: actions/deploy-pages@v4
