@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue"
+import { ArrowUpIcon, ArrowDownIcon } from "@heroicons/vue/20/solid"
 
 export interface Stat {
   name: string
@@ -109,6 +110,16 @@ console.log(displayStats.value)
                 'text-red-800': item.changeType === ChangeType.Decrease
               }"
             >
+              <ArrowUpIcon
+                v-if="item.changeType === ChangeType.Increase"
+                class="-ml-1 mr-0.5 h-5 w-5 flex-shrink-0 self-center text-green-500"
+                aria-hidden="true"
+              />
+              <ArrowDownIcon
+                v-else-if="item.changeType === ChangeType.Decrease"
+                class="-ml-1 mr-0.5 h-5 w-5 flex-shrink-0 self-center text-red-500"
+                aria-hidden="true"
+              />
               <span v-if="item.changeType === ChangeType.Increase" class="sr-only">
                 Increase by
               </span>
