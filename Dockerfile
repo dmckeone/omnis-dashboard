@@ -32,6 +32,7 @@ WORKDIR /app
 COPY src/ ./src/
 
 # Copy app config files
+COPY json-control/ ./json-control/
 COPY *.html ./
 COPY *.ts ./
 COPY *.cjs ./
