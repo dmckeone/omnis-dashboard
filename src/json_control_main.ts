@@ -34,7 +34,7 @@ window.ctrl_omnis_dashboard.prototype = (function () {
 
   /****** CONSTANTS ******/
   const EVENTS = {
-    evNetOmnisControlOpened: 1000,
+    evControlOpened: 1000,
     evControlEvent: 1001
   }
 
