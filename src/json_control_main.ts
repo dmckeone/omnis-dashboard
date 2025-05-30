@@ -123,7 +123,7 @@ window.ctrl_omnis_dashboard.prototype = (function () {
     // Emit "control opened" event
     if (this.canSendEvent(EVENTS.evControlOpened)) {
       this.eventParamsAdd("pId", `${controlId}`)
-      this.sendEvent("evNetOmnisControlOpened")
+      this.sendEvent("evControlOpened")
     }
 
     // return true if our control is a container and the
