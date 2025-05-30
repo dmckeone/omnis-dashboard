@@ -9,6 +9,8 @@ declare global {
     ctrl_base: any
     init_class_inst: any
     eBaseEvent: any
+    OMNIS_STUDIO_VERSION: any
+    jOmnis: any
 
     // Control globals
     ctrl_omnis_dashboard: any
@@ -16,6 +18,43 @@ declare global {
     ctrl_omnis_dashboard_registry: any
   }
 }
+
+// Polyfill for Omnis Studio 10 that adds the customDragHandling and customDropHandling
+// properties
+function customDragPolyfill() {
+  // Only apply polyfill to Studio 10
+  if (window.OMNIS_STUDIO_VERSION.substr(0, 2) !== "10") {
+    return
+  }
+
+  // Only apply polyfill once
+  if (!!window.jOmnis.hasPre11DragPolyfill && window.jOmnis.hasPre11DragPolyfill === true) {
+    return
+  }
+  window.jOmnis.hasPre11DragPolyfill = true
+
+  // Override dragStart:
+  const origDragStart = window.jOmnis.dragStart
+  window.jOmnis.dragStart = function (event: any, ...args: any[]) {
+    const ctrl = this.getOmnisCtrl(event.target)
+    if (!ctrl || ctrl.customDragHandling)
+      // jmg1172
+      return // Possibly allow something else on the form (that is not an Omnis control) to handle dragstart
+
+    origDragStart.apply(this, event, ...args) // Call original function
+  }
+
+  // Override dragOver:
+  const origDragOver = window.jOmnis.dragOver
+  window.jOmnis.dragOver = function (event: any, ...args: any[]) {
+    const ctrl = this.getOmnisCtrl(event.target)
+    if (!ctrl || ctrl.customDropHandling || ctrl.form.customDropHandling)
+      // jmg1172 // jmg1178
+      return // jmg1172
+    origDragOver.apply(this, event, ...args) // Call original function
+  }
+}
+customDragPolyfill()
 
 let component_sequence = 1
 
