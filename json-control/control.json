@@ -15,7 +15,7 @@
   "properties": {},
   "constants": {},
   "events": {
-    "evNetOmnisControlOpened": {
+    "evControlOpened": {
       "id": 1000,
       "desc": "Event sent when control is fully opened",
       "parameters": [
