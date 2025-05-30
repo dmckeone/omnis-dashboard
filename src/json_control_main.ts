@@ -1,16 +1,15 @@
 /* eslint-disable  @typescript-eslint/no-unused-vars */
 
 import { mountApp } from "./mount"
+import { customDragPolyfill } from "./polyfill"
 
-// Allow type script to create the JSON Control
+// Declare JSON Control globals
 declare global {
   interface Window {
     // Omnis Studio globals
     ctrl_base: any
     init_class_inst: any
     eBaseEvent: any
-    OMNIS_STUDIO_VERSION: any
-    jOmnis: any
 
     // Control globals
     ctrl_omnis_dashboard: any
@@ -19,41 +18,7 @@ declare global {
   }
 }
 
-// Polyfill for Omnis Studio 10 that adds the customDragHandling and customDropHandling
-// properties
-function customDragPolyfill() {
-  // Only apply polyfill to Studio 10
-  if (window.OMNIS_STUDIO_VERSION.substr(0, 2) !== "10") {
-    return
-  }
-
-  // Only apply polyfill once
-  if (!!window.jOmnis.hasPre11DragPolyfill && window.jOmnis.hasPre11DragPolyfill === true) {
-    return
-  }
-  window.jOmnis.hasPre11DragPolyfill = true
-
-  // Override dragStart:
-  const origDragStart = window.jOmnis.dragStart
-  window.jOmnis.dragStart = function (event: any, ...args: any[]) {
-    const ctrl = this.getOmnisCtrl(event.target)
-    if (!ctrl || ctrl.customDragHandling)
-      // jmg1172
-      return // Possibly allow something else on the form (that is not an Omnis control) to handle dragstart
-
-    origDragStart.apply(this, event, ...args) // Call original function
-  }
-
-  // Override dragOver:
-  const origDragOver = window.jOmnis.dragOver
-  window.jOmnis.dragOver = function (event: any, ...args: any[]) {
-    const ctrl = this.getOmnisCtrl(event.target)
-    if (!ctrl || ctrl.customDropHandling || ctrl.form.customDropHandling)
-      // jmg1172 // jmg1178
-      return // jmg1172
-    origDragOver.apply(this, event, ...args) // Call original function
-  }
-}
+// Polyfills
 customDragPolyfill()
 
 let component_sequence = 1
@@ -69,7 +34,7 @@ window.ctrl_omnis_dashboard.prototype = (function () {
 
   /****** CONSTANTS ******/
   const EVENTS = {
-    evControlEvent: 1
+    evControlEvent: 1000
   }
 
   /** The control prototype - inherited from base class prototype */
@@ -136,7 +101,15 @@ window.ctrl_omnis_dashboard.prototype = (function () {
     const hooks = window.ctrl_omnis_dashboard_hooks.get(controlId)
 
     // Setup event hook
-    hooks.emitEvent = ctrl.emitEvent
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
+    const that = this
+    hooks.emitEvent = function (omnisEvent: any) {
+      if (that.canSendEvent(EVENTS.evControlEvent)) {
+        that.eventParamsAdd("pEvent", omnisEvent["event"])
+        that.eventParamsAdd("pPayload", JSON.stringify(omnisEvent["payload"]))
+        that.sendEvent("evControlEvent")
+      }
+    }
 
     // Set new hooks for this control
     window.ctrl_omnis_dashboard_hooks.set(controlId, hooks)
@@ -149,14 +122,6 @@ window.ctrl_omnis_dashboard.prototype = (function () {
     // return true if our control is a container and the
     // children require installing via this.form.InstallChildren
     return false
-  }
-
-  ctrl.emitEvent = function (omnisEvent: any) {
-    if (this.canSendEvent(EVENTS.evControlEvent)) {
-      this.eventParamsAdd("pEvent", omnisEvent["event"])
-      this.eventParamsAdd("pPayload", JSON.stringify(omnisEvent["payload"]))
-      this.sendEvent("evControlEvent")
-    }
   }
 
   /**

@@ -16,7 +16,7 @@
   "constants": {},
   "events": {
     "evControlEvent": {
-      "id": 1,
+      "id": 1000,
       "desc": "Event sent by underlying control (in the style of HTML Controls)",
       "parameters": [
         {
