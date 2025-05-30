@@ -82,7 +82,6 @@ function formatStat(item: Stat): DisplayStat {
 }
 
 const displayStats = computed(() => props.stats.map(formatStat))
-console.log(displayStats.value)
 </script>
 <template>
   <div class="@container h-full w-full">
