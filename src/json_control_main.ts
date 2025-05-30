@@ -34,7 +34,8 @@ window.ctrl_omnis_dashboard.prototype = (function () {
 
   /****** CONSTANTS ******/
   const EVENTS = {
-    evControlEvent: 1000
+    evNetOmnisControlOpened: 1000,
+    evControlEvent: 1001
   }
 
   /** The control prototype - inherited from base class prototype */
@@ -96,6 +97,8 @@ window.ctrl_omnis_dashboard.prototype = (function () {
     // Mount the Vue app to the provided element
     mountApp(controlId, client_elem)
 
+    this.update()
+
     // Now that the Vue app has been mounted, retrieve the hooks so the event emitter can be
     // setup and the
     const hooks = window.ctrl_omnis_dashboard_hooks.get(controlId)
@@ -117,7 +120,11 @@ window.ctrl_omnis_dashboard.prototype = (function () {
     // Now that everything is set up call the onLoad hook.
     hooks.onLoad()
 
-    this.update()
+    // Emit "control opened" event
+    if (this.canSendEvent(EVENTS.evNetOmnisControlOpened)) {
+      this.eventParamsAdd("pId", `${controlId}`)
+      this.sendEvent("evNetOmnisControlOpened")
+    }
 
     // return true if our control is a container and the
     // children require installing via this.form.InstallChildren

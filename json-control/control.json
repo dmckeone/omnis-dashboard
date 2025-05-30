@@ -15,17 +15,28 @@
   "properties": {},
   "constants": {},
   "events": {
-    "evControlEvent": {
+    "evNetOmnisControlOpened": {
       "id": 1000,
+      "desc": "Event sent when control is fully opened",
+      "parameters": [
+        {
+          "name": "Id",
+          "type": "character",
+          "desc": "Id of the control"
+        }
+        ]
+    },
+    "evControlEvent": {
+      "id": 1001,
       "desc": "Event sent by underlying control (in the style of HTML Controls)",
       "parameters": [
         {
-          "name": "event",
+          "name": "Event",
           "type": "character",
           "desc": "Name of the event"
         },
         {
-          "name": "payload",
+          "name": "Payload",
           "type": "character",
           "desc": "JSON content from the component"
         }
