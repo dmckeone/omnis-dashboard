@@ -53,12 +53,6 @@ window.ctrl_omnis_dashboard.prototype = (function () {
    * superclass.init_class_inst function
    */
   ctrl.init_class_inst = function () {
-    this.controlId = component_sequence
-    component_sequence += 1
-
-    // Add this instance to the registry (useful for debugging)
-    window.ctrl_omnis_dashboard_registry.set(this.controlId, this)
-
     // install superclass prototype so we can than call superclass methods
     // using this.superclass.method_name.call(this[,...])
     this.superclass = window.ctrl_base.prototype
@@ -77,7 +71,12 @@ window.ctrl_omnis_dashboard.prototype = (function () {
    * @returns {boolean}   True if the control is a container.
    */
   ctrl.init_ctrl_inst = function (form: any, elem: any, rowCtrl: any, rowNumber: any) {
-    const controlId = this.controlId
+    const controlId = component_sequence
+    this.controlId = controlId
+    component_sequence += 1
+
+    // Add this instance to the registry (useful for debugging)
+    window.ctrl_omnis_dashboard_registry.set(this.controlId, this)
 
     // Set properties -- https://www.omnis.net/developers/resources/onlinedocs/index.jsp?detail=JavaScriptSDK/06js_api.html#allowdefaultdrophandling
     this.allowDefaultDropHandling = true
