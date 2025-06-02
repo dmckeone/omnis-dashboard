@@ -108,7 +108,7 @@ window.ctrl_omnis_dashboard.prototype = (function () {
     hooks.emitEvent = function (omnisEvent: any) {
       if (that.canSendEvent(EVENTS.evControlEvent)) {
         that.eventParamsAdd("pEvent", omnisEvent["event"])
-        that.eventParamsAdd("pPayload", JSON.stringify(omnisEvent["payload"]))
+        that.eventParamsAdd("pPayload", omnisEvent["payload"])
         that.sendEvent("evControlEvent")
       }
     }
@@ -178,6 +178,22 @@ window.ctrl_omnis_dashboard.prototype = (function () {
       elem.ontouchstart = this.mEventFunction
       elem.ontouchend = this.mEventFunction
     }
+  }
+
+  /**
+   * This is called to check if an event can be triggered
+   *
+   * @param event event identifier
+   */
+  ctrl.canSendEvent = function (event: any) {
+    if (!this.isEnabled()) return false // If the control is disabled, don't process the event.
+
+    switch (event) {
+      case EVENTS.evControlEvent:
+        return true
+    }
+
+    return this.superclass.canSendEvent.call(this, event) //Let the superclass handle the event, if not handled here.
   }
 
   /**
