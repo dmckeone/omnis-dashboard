@@ -188,9 +188,8 @@ window.ctrl_omnis_dashboard.prototype = (function () {
   ctrl.canSendEvent = function (event: any) {
     if (!this.isEnabled()) return false // If the control is disabled, don't process the event.
 
-    switch (event) {
-      case EVENTS.evControlEvent:
-        return true
+    if (Object.keys(EVENTS).some((k) => k === event)) {
+      return true
     }
 
     return this.superclass.canSendEvent.call(this, event) //Let the superclass handle the event, if not handled here.
