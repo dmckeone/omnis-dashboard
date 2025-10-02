@@ -17,7 +17,7 @@ COPY package-lock.json ./
 RUN echo "//${verdaccio_registry}/:_authToken=\"${verdaccio_token}\"\nregistry=https://${verdaccio_registry}/" > .npmrc
 
 # Install app dependencies
-RUN npm ci install --ignore-scripts
+RUN pnpm install --frozen-lockfile --ignore-scripts
 
 
 #############################################

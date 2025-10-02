@@ -27,11 +27,11 @@ jobs:
       - name: Bundle Component with Vite
         uses: actions/setup-node@v3
         with:
-          node-version: "23"
-          cache: "npm"
+          node-version: "24"
+          cache: "pnpm"
       - run: |
-          npm ci
-          HISTOIRE_PATH_PREFIX=/omnis-dashboard/ npm run story:build-ci --if-present
+          pnpm install --frozen-lockfile
+          HISTOIRE_PATH_PREFIX=/omnis-dashboard/ pnpm run story:build-ci --if-present
           mv .histoire/dist public
       - name: Upload static files as artifact
         id: deployment

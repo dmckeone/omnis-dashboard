@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "build": "npm run type-check && vite build && mkdir dist/omnis-dashboard && mv dist/omnis-dashboard.html dist/omnis-dashboard/omnis-dashboard.htm",
+    "build": "pnpm run type-check && vite build && mkdir dist/omnis-dashboard && mv dist/omnis-dashboard.html dist/omnis-dashboard/omnis-dashboard.htm",
     "watch": "vite build --watch",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
     "format": "prettier --write .",

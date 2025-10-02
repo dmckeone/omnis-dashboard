@@ -60,7 +60,7 @@ to the CSS and JS sections, respectively.
 ### Build HTML / CSS / Assets
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 ### dist

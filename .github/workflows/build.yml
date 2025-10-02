@@ -13,11 +13,11 @@ jobs:
       - name: Bundle Component with Vite
         uses: actions/setup-node@v3
         with:
-          node-version: "23"
-          cache: "npm"
+          node-version: "24"
+          cache: "pnpm"
       - run: |
-          npm ci
-          npm run build --if-present
+          pnpm install --frozen-lockfile
+          pnpm run build --if-present
           mv dist omnis-dashboard
           tar -zcvf omnis-dashboard.tar.gz omnis-dashboard/
       - name: Upload Omnis Studio HTML Control artifact
