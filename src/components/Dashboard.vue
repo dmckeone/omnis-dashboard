@@ -52,12 +52,18 @@ const containerHeight = ref(0)
 
 useResizeObserver(titleElement, (entries) => {
   const entry = entries[0]
+  if (!entry) {
+    return
+  }
   const { height } = entry.contentRect
   titleHeight.value = height
 })
 
 useResizeObserver(containerElement, (entries) => {
   const entry = entries[0]
+  if (!entry) {
+    return
+  }
   const { height } = entry.contentRect
   containerHeight.value = height
 })
@@ -150,7 +156,7 @@ const gridClasses = computed(() => ({
           :key="panel.id"
           class="panel-height"
           :class="{
-            'bg-neutral-100/75 rounded-xl border-gray-200 shadow-md border-1': !isContainer(panel),
+            'bg-neutral-100/75 rounded-xl border-gray-200 shadow-md border': !isContainer(panel),
             'overflow-clip': requiresClip(panel),
             'overflow-visible': !requiresClip(panel)
           }"

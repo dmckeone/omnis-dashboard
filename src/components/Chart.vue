@@ -8,6 +8,9 @@ const panelHeight = ref(0)
 
 useResizeObserver(panelElement, (entries) => {
   const entry = entries[0]
+  if (!entry) {
+    return
+  }
   const { height } = entry.contentRect
   panelHeight.value = height
 })
@@ -17,6 +20,9 @@ const titleHeight = ref(0)
 
 useResizeObserver(titleElement, (entries) => {
   const entry = entries[0]
+  if (!entry) {
+    return
+  }
   const { height } = entry.contentRect
   titleHeight.value = height
 })

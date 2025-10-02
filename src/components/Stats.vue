@@ -90,7 +90,7 @@ const displayStats = computed(() => props.stats.map(formatStat))
         {{ props.title }}
       </h3>
       <dl
-        class="mt-5 grid grid-cols-1 divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow @lg:grid-cols-3 @lg:divide-x @lg:divide-y-0"
+        class="mt-5 grid grid-cols-1 divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow-sm @lg:grid-cols-3 @lg:divide-x @lg:divide-y-0"
       >
         <div v-for="item in displayStats" :key="item.name" class="px-4 py-5 @sm:p-6">
           <dt class="text-base font-normal text-gray-900">{{ item.name }}</dt>
@@ -111,12 +111,12 @@ const displayStats = computed(() => props.stats.map(formatStat))
             >
               <ArrowUpIcon
                 v-if="item.changeType === ChangeType.Increase"
-                class="-ml-1 mr-0.5 h-5 w-5 flex-shrink-0 self-center text-green-500"
+                class="-ml-1 mr-0.5 h-5 w-5 shrink-0 self-center text-green-500"
                 aria-hidden="true"
               />
               <ArrowDownIcon
                 v-else-if="item.changeType === ChangeType.Decrease"
-                class="-ml-1 mr-0.5 h-5 w-5 flex-shrink-0 self-center text-red-500"
+                class="-ml-1 mr-0.5 h-5 w-5 shrink-0 self-center text-red-500"
                 aria-hidden="true"
               />
               <span v-if="item.changeType === ChangeType.Increase" class="sr-only">

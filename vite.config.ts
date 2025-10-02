@@ -4,6 +4,7 @@ import { createHtmlPlugin } from "vite-plugin-html"
 import multiple from "vite-plugin-multiple"
 import { fileURLToPath, URL } from "url"
 import vue from "@vitejs/plugin-vue"
+import tailwindcss from "@tailwindcss/vite"
 
 const isProduction = process.env.NODE_ENV === "production"
 const isHistoire = process.env.HISTOIRE != null ? process.env.HISTOIRE : false
@@ -35,7 +36,7 @@ if (isProduction && !isHistoire) {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), ...pluginExtra],
+  plugins: [vue(), tailwindcss(), ...pluginExtra],
   build: {
     ...buildExtra
   },
