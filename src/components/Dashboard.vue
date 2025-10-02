@@ -47,25 +47,29 @@ const titleElement = ref(null)
 const containerElement = ref(null)
 
 // Section Heights
+const DEFAULT_TITLE_HEIGHT = 50
 const titleHeight = ref(0)
+const DEFAULT_CONTAINER_HEIGHT = 50
 const containerHeight = ref(0)
 
 useResizeObserver(titleElement, (entries) => {
   const entry = entries[0]
-  if (!entry) {
-    return
+  if (entry) {
+    const { height } = entry.contentRect
+    titleHeight.value = Math.min(Math.max(height, 0), document.documentElement.clientHeight)
+  } else {
+    titleHeight.value = DEFAULT_TITLE_HEIGHT
   }
-  const { height } = entry.contentRect
-  titleHeight.value = height
 })
 
 useResizeObserver(containerElement, (entries) => {
   const entry = entries[0]
-  if (!entry) {
-    return
+  if (entry) {
+    const { height } = entry.contentRect
+    containerHeight.value = Math.min(Math.max(height, 0), document.documentElement.clientHeight)
+  } else {
+    containerHeight.value = DEFAULT_CONTAINER_HEIGHT
   }
-  const { height } = entry.contentRect
-  containerHeight.value = height
 })
 //endregion
 
@@ -139,7 +143,7 @@ const gridClasses = computed(() => ({
 </script>
 
 <template>
-  <div ref="containerElement" class="h-full w-full" :class="{ 'bg-yellow-100': props.debug }">
+  <div ref="containerElement" class="size-full" :class="{ 'bg-yellow-100': props.debug }">
     <div ref="titleElement">
       <h2 class="text-2xl font-semibold text-center">{{ props.title }}</h2>
     </div>

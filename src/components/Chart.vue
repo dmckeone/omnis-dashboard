@@ -3,28 +3,32 @@ import VChart from "vue-echarts"
 import { computed, ref } from "vue"
 import { useResizeObserver } from "@vueuse/core"
 
+const DEFAULT_PANEL_HEIGHT = 50
 const panelElement = ref(null)
 const panelHeight = ref(0)
 
 useResizeObserver(panelElement, (entries) => {
   const entry = entries[0]
-  if (!entry) {
-    return
+  if (entry) {
+    const { height } = entry.contentRect
+    panelHeight.value = Math.min(Math.max(height, 0), document.documentElement.clientHeight)
+  } else {
+    panelHeight.value = DEFAULT_PANEL_HEIGHT
   }
-  const { height } = entry.contentRect
-  panelHeight.value = height
 })
 
+const DEFAULT_TITLE_HEIGHT = 50
 const titleElement = ref(null)
 const titleHeight = ref(0)
 
 useResizeObserver(titleElement, (entries) => {
   const entry = entries[0]
-  if (!entry) {
-    return
+  if (entry) {
+    const { height } = entry.contentRect
+    titleHeight.value = Math.min(Math.max(height, 0), document.documentElement.clientHeight)
+  } else {
+    titleHeight.value = DEFAULT_TITLE_HEIGHT
   }
-  const { height } = entry.contentRect
-  titleHeight.value = height
 })
 
 const chartHeight = computed(() => {

@@ -2,6 +2,7 @@ import { defineConfig } from "vite"
 import { fileURLToPath, URL } from "url"
 import { viteStaticCopy } from "vite-plugin-static-copy"
 import vue from "@vitejs/plugin-vue"
+import tailwindcss from "@tailwindcss/vite"
 
 const isProduction = process.env.NODE_ENV === "production"
 
@@ -20,6 +21,7 @@ if (isProduction) {
 export default defineConfig({
   plugins: [
     vue(),
+    tailwindcss(),
     viteStaticCopy({
       targets: [
         {

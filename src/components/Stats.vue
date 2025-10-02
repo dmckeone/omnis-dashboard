@@ -84,7 +84,7 @@ function formatStat(item: Stat): DisplayStat {
 const displayStats = computed(() => props.stats.map(formatStat))
 </script>
 <template>
-  <div class="@container h-full w-full">
+  <div class="@container size-full">
     <div class="m-1">
       <h3 v-if="props.title" class="text-base font-semibold leading-6 text-gray-900">
         {{ props.title }}
