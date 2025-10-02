@@ -22,7 +22,7 @@ jobs:
           cache: "pnpm"
       - run: |
           pnpm install --frozen-lockfile
-          pnpm run build --if-present
+          pnpm run --if-present build 
           mv dist omnis-dashboard
           tar -zcvf omnis-dashboard.tar.gz omnis-dashboard/
       - name: Upload Omnis Studio HTML Control artifact
