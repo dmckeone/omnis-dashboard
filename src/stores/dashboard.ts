@@ -6,6 +6,44 @@ import type { PanelData } from "@/panels.ts"
 
 export const defaultTheme = "default"
 
+// https://daisyui.com/docs/themes/
+type themes =
+  | "light"
+  | "dark"
+  | "cupcake"
+  | "bumblebee"
+  | "emerald"
+  | "corporate"
+  | "synthwave"
+  | "retro"
+  | "cyberpunk"
+  | "valentine"
+  | "halloween"
+  | "garden"
+  | "forest"
+  | "aqua"
+  | "lofi"
+  | "pastel"
+  | "fantasy"
+  | "wireframe"
+  | "black"
+  | "luxury"
+  | "dracula"
+  | "cmyk"
+  | "autumn"
+  | "business"
+  | "acid"
+  | "lemonade"
+  | "night"
+  | "coffee"
+  | "winter"
+  | "dim"
+  | "nord"
+  | "sunset"
+  | "caramellatte"
+  | "abyss"
+  | "silk"
+
 interface Dashboard {
   debug?: boolean
   drag?: boolean
@@ -14,6 +52,7 @@ interface Dashboard {
   rows?: number
   gap?: number
   bottomMargin?: number
+  theme?: themes
   panels?: Array<PanelData>
 }
 
@@ -30,6 +69,7 @@ export const useDashboard = defineStore("Dashboard", () => {
     rows: computed(() => data.value?.rows ?? 3),
     gap: computed(() => data.value?.gap ?? 2),
     bottomMargin: computed(() => data.value?.bottomMargin ?? 0),
+    theme: computed(() => data.value?.theme ?? "light"),
     panels: computed({
       get: () => data.value?.panels ?? [],
       set: (newPanels: PanelData[]) => {

@@ -128,7 +128,14 @@ export function usePanel(panel: Ref<PanelData | undefined>): ComputedRef<PanelDe
     if (itemType != null) {
       func = panels[itemType]
     }
-    return func(panel.value)
+    if (func) {
+      return func(panel.value)
+    } else {
+      return {
+        component: ErrorPanel,
+        props: { error: "Invalid panel type" }
+      }
+    }
   })
 }
 

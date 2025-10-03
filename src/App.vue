@@ -20,6 +20,7 @@ const dashboard = useDashboard()
       :columns="dashboard.columns"
       :rows="dashboard.rows"
       :bottom-margin="40"
+      :theme="dashboard.theme"
     />
   </div>
 </template>

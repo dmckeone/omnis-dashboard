@@ -17,6 +17,7 @@ const props = withDefaults(
     title?: string
     gap?: number
     bottomMargin?: number
+    theme?: string
   }>(),
   {
     debug: false,
@@ -25,7 +26,8 @@ const props = withDefaults(
     rows: 2,
     title: "",
     gap: 2,
-    bottomMargin: 0
+    bottomMargin: 0,
+    theme: "light"
   }
 )
 //endregion
@@ -47,19 +49,29 @@ const titleElement = ref(null)
 const containerElement = ref(null)
 
 // Section Heights
+const DEFAULT_TITLE_HEIGHT = 50
 const titleHeight = ref(0)
+const DEFAULT_CONTAINER_HEIGHT = 50
 const containerHeight = ref(0)
 
 useResizeObserver(titleElement, (entries) => {
   const entry = entries[0]
-  const { height } = entry.contentRect
-  titleHeight.value = height
+  if (entry) {
+    const { height } = entry.contentRect
+    titleHeight.value = Math.min(Math.max(height, 0), document.documentElement.clientHeight)
+  } else {
+    titleHeight.value = DEFAULT_TITLE_HEIGHT
+  }
 })
 
 useResizeObserver(containerElement, (entries) => {
   const entry = entries[0]
-  const { height } = entry.contentRect
-  containerHeight.value = height
+  if (entry) {
+    const { height } = entry.contentRect
+    containerHeight.value = Math.min(Math.max(height, 0), document.documentElement.clientHeight)
+  } else {
+    containerHeight.value = DEFAULT_CONTAINER_HEIGHT
+  }
 })
 //endregion
 
@@ -133,7 +145,12 @@ const gridClasses = computed(() => ({
 </script>
 
 <template>
-  <div ref="containerElement" class="h-full w-full" :class="{ 'bg-yellow-100': props.debug }">
+  <div
+    ref="containerElement"
+    class="size-full"
+    :class="{ 'bg-yellow-100': props.debug }"
+    :data-theme="props.theme"
+  >
     <div ref="titleElement">
       <h2 class="text-2xl font-semibold text-center">{{ props.title }}</h2>
     </div>
@@ -150,7 +167,7 @@ const gridClasses = computed(() => ({
           :key="panel.id"
           class="panel-height"
           :class="{
-            'bg-neutral-100/75 rounded-xl border-gray-200 shadow-md border-1': !isContainer(panel),
+            'bg-neutral-100/75 rounded-xl border-gray-200 shadow-md border': !isContainer(panel),
             'overflow-clip': requiresClip(panel),
             'overflow-visible': !requiresClip(panel)
           }"

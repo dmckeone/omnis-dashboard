@@ -24,7 +24,7 @@
           "type": "character",
           "desc": "Id of the control"
         }
-        ]
+      ]
     },
     "evControlEvent": {
       "id": 1001,

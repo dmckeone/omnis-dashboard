@@ -2,7 +2,7 @@
 import { ref } from "vue"
 
 import { exampleTrafficSourcesChart } from "@/examples"
-import { themes } from "@/themes"
+import { themes } from "@/echart-themes"
 
 import Chart from "./Chart.vue"
 
