@@ -17,6 +17,7 @@ const props = withDefaults(
     title?: string
     gap?: number
     bottomMargin?: number
+    theme?: string
   }>(),
   {
     debug: false,
@@ -25,7 +26,8 @@ const props = withDefaults(
     rows: 2,
     title: "",
     gap: 2,
-    bottomMargin: 0
+    bottomMargin: 0,
+    theme: "light"
   }
 )
 //endregion
@@ -143,7 +145,12 @@ const gridClasses = computed(() => ({
 </script>
 
 <template>
-  <div ref="containerElement" class="size-full" :class="{ 'bg-yellow-100': props.debug }">
+  <div
+    ref="containerElement"
+    class="size-full"
+    :class="{ 'bg-yellow-100': props.debug }"
+    :data-theme="props.theme"
+  >
     <div ref="titleElement">
       <h2 class="text-2xl font-semibold text-center">{{ props.title }}</h2>
     </div>

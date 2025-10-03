@@ -38,6 +38,7 @@ if (isProduction && !isHistoire) {
 export default defineConfig({
   plugins: [vue(), tailwindcss(), ...pluginExtra],
   build: {
+    sourcemap: false,
     ...buildExtra
   },
   resolve: {
