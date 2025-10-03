@@ -1,8 +1,12 @@
 {
 	"classtype": "kFolder",
-	"omnisversion": "10.2",
+	"omnisversion": "11.2",
+	"omnisbuild": 990040162,
 	"internalversion": 0,
 	"properties": {
+		"componentinfo": {
+
+		},
 		"componenttype": "kCompStoreHidden",
 		"createdate": "2023-10-21 13:41:23",
 		"desc": "",

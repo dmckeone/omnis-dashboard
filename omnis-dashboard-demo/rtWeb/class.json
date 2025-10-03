@@ -1,7 +1,8 @@
 {
 	"classtype": "kRemoteTask",
-	"omnisversion": "10.2",
-	"internalversion": 3,
+	"omnisversion": "11.2",
+	"omnisbuild": 990040162,
+	"internalversion": 4,
 	"nextident": 1,
 	"tvardefs": [
 
@@ -17,6 +18,9 @@
 		"canremotedebugwhenlocked": false,
 		"collectperformancedata": false,
 		"componenticon": 0,
+		"componentinfo": {
+
+		},
 		"componenttype": "kCompStoreHidden",
 		"createdate": "2025-05-21 12:19:12",
 		"desc": "",
@@ -29,7 +33,7 @@
 		"localtime": false,
 		"maxtime": 0,
 		"maxusers": 0,
-		"moddate": "2025-05-28 11:16:23",
+		"moddate": "2025-10-03 11:46:01",
 		"restful": false,
 		"restfulapiname": "",
 		"showascheckedout": false,

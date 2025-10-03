@@ -1,0 +1,5 @@
+On evAfter
+	Calculate pretty as OJSON.$formatjson(iPanelsJSON)
+	Calculate iPanelsJSON as pretty
+	Do method save
+	Do $cfield.$redraw()

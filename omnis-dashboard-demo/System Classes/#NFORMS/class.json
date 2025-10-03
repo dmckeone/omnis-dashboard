@@ -1,6 +1,7 @@
 {
 	"classtype": "kSystemtable",
-	"omnisversion": "10.2",
+	"omnisversion": "11.2",
+	"omnisbuild": 990040162,
 	"internalversion": 1,
 	"properties": {
 		"componenttype": "kCompStoreHidden",

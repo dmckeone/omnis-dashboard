@@ -10,6 +10,9 @@
 		"backalpha": 255,
 		"backcolor": "kColorDefault",
 		"bordercolor": "kColorDefault",
+		"componentinfo": {
+
+		},
 		"contextmenu": "",
 		"cssclassname": "",
 		"dataname": "iDashboardJSON",
@@ -26,6 +29,9 @@
 		"nexttabobject": "",
 		"objlink": 0,
 		"preventlayoutanimation": false,
+		"removefromtaborder": false,
+		"sidepanel": false,
+		"sidepanelmode": "kSidePanelModeNone",
 		"tooltip": "",
 		"userinfo": "",
 		"vertscroll": true,
