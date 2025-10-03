@@ -84,29 +84,25 @@ function formatStat(item: Stat): DisplayStat {
 const displayStats = computed(() => props.stats.map(formatStat))
 </script>
 <template>
-  <div class="@container size-full">
+  <div class="@container size-full overflow-y-scroll">
     <div class="m-1">
-      <h3 v-if="props.title" class="text-base font-semibold leading-6 text-gray-900">
+      <h3 v-if="props.title" class="text-center font-semibold text-primary">
         {{ props.title }}
       </h3>
-      <dl
-        class="mt-5 grid grid-cols-1 divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow-sm @lg:grid-cols-3 @lg:divide-x @lg:divide-y-0"
-      >
-        <div v-for="item in displayStats" :key="item.name" class="px-4 py-5 @sm:p-6">
-          <dt class="text-base font-normal text-gray-900">{{ item.name }}</dt>
-          <dd class="mt-1 flex items-baseline justify-between @lg:block @xl:flex">
-            <div class="flex items-baseline text-2xl font-semibold text-indigo-600">
-              {{ item.current }}
-              <span class="ml-2 text-sm font-medium text-gray-500">from {{ item.previous }}</span>
-            </div>
-
+      <div class="stats stats-vertical flex flex-wrap @md:flex-nowrap @md:stats-horizontal">
+        <div v-for="item in displayStats" :key="item.name" class="stat flex flex-col">
+          <div class="stat-figure text-info">
+            <span>{{ item.current }}</span>
+            <span class="ml-2 text-xs text-neutral/50">from {{ item.previous }}</span>
+          </div>
+          <div class="stat-description text-center mt-2">
             <div
-              class="inline-flex items-baseline rounded-full px-2.5 py-0.5 text-sm font-medium @md:mt-2 @lg:mt-0"
+              class="ml-2 inline-flex items-baseline rounded-full px-2.5 py-0.5 text-sm font-medium @md:mt-2 @lg:mt-0"
               :class="{
-                'bg-green-100': item.changeType === ChangeType.Increase,
-                'text-green-800': item.changeType === ChangeType.Increase,
-                'bg-red-100': item.changeType === ChangeType.Decrease,
-                'text-red-800': item.changeType === ChangeType.Decrease
+                'bg-success/10': item.changeType === ChangeType.Increase,
+                'text-success': item.changeType === ChangeType.Increase,
+                'bg-error/10': item.changeType === ChangeType.Decrease,
+                'text-error': item.changeType === ChangeType.Decrease
               }"
             >
               <ArrowUpIcon
@@ -127,9 +123,9 @@ const displayStats = computed(() => props.stats.map(formatStat))
               </span>
               {{ item.change }}
             </div>
-          </dd>
+          </div>
         </div>
-      </dl>
+      </div>
     </div>
   </div>
 </template>
