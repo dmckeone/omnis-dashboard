@@ -1,0 +1,6 @@
+
+Do $inherited.$init(pId)
+
+If not(isclear(pName))
+	Calculate $cinst.$name as pName
+End If

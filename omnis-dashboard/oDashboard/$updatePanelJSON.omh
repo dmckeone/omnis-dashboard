@@ -1,0 +1,29 @@
+
+Calculate newPanels as OJSON.$jsontolistorrow(pJSON)
+
+Do panels.$define(panel)
+If newPanels.$linecount>0
+	Calculate name as newPanels.1.C1.$name
+	If name="___1"
+		# Special Omnis array syntax for asymmetric array of objects -- https://www.omnis.net/developers/resources/onlinedocs/ExtendingOmnis/02ojson.html#json-arrays
+		For col from 1 to newPanels.$colcount step 1
+			Calculate panelRow as newPanels.1.C[col]
+			Calculate panel as $cinst.$panelForType(panelRow.type)
+			Calculate panelJSON as OJSON.$listorrowtojson(panelRow,kUniTypeCharacter)
+			Do panel.$loadJSON(panelJSON)
+			Do panels.$add(panel)
+		End For
+	Else
+		# Symmetric array of objects (as regular Omnis List)
+		For newPanels.$line from 1 to newPanels.$linecount step 1
+			Calculate panelRow as newPanels
+			Calculate panel as $cinst.$panelForType(panelRow.type)
+			Calculate panelJSON as OJSON.$listorrowtojson(panelRow,kUniTypeCharacter)
+			Do panel.$loadJSON(panelJSON)
+			Do panels.$add(panel)
+		End For
+	End If
+End If
+
+
+Calculate iProps.panels as panels

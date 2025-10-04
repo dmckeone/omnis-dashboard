@@ -1,0 +1,14 @@
+On evKey
+	Process event and continue
+	Calculate contents as OJSON.$formatjson($cfield.$contents) ## Validation check to avoid flailing the dashboard while typing
+	If pos('parse error: ',contents)=0
+		Do iDashboard.$loadJSON(contents)
+		Do method save
+		Do iBrowserRef.$redraw()
+	End If
+	
+On evAfter
+	Do iDashboard.$loadJSON(iDashboardJSON)
+	Do method save
+	Do $cfield.$redraw()
+	Do iBrowserRef.$redraw()

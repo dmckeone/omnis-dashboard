@@ -1,0 +1,9 @@
+
+Do $cinst.$defineProps(iProps)
+
+If iPropNames.$linecount=0
+	Calculate iPropNames as iProps.$cols.$makelist($ref.$name)
+	Do iPropNames.$redefine(name)
+End If
+
+Do $cinst.$setDefaults(iProps)

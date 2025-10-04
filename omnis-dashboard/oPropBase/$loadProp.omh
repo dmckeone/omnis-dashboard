@@ -1,0 +1,3 @@
+# Override to load special values with replacement content
+
+Calculate iProps.[pName] as pData

@@ -1,2 +1,3 @@
-Calculate iPanelsJSON as OJSON.$formatjson(pPayload)
-Redraw iPanelsJSON
+Do iDashboard.$updatePanelJSON(pPayload)
+Do method save
+Redraw iDashboardJSON

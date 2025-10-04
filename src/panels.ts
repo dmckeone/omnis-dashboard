@@ -21,9 +21,6 @@ interface PanelDefinition {
 
 interface BasePanel {
   id: number
-  name: string
-  loading?: boolean
-  error?: string
 }
 
 export interface DashboardPanel<T> extends BasePanel {
@@ -40,6 +37,7 @@ export interface DashboardPanel<T> extends BasePanel {
 
 interface DebugPanel extends BasePanel {
   type: "debug"
+  name?: string
 }
 
 interface ChartPanel extends BasePanel {

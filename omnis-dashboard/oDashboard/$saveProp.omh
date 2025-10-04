@@ -1,0 +1,13 @@
+Switch pName
+	Case 'panels'
+		Do savedPanels.$define(panelJSON)
+		Calculate panels as iProps.panels
+		For panels.$line from 1 to panels.$linecount step 1
+			Calculate panel as panels.C1
+			Do savedPanels.$add(panel.$saveJSON())
+		End For
+		Calculate panelJSON as con('[',join(savedPanels,','),']')
+		Quit method OJSON.$jsontolistorrow(panelJSON)
+	Default
+		Quit method iProps.[pName]
+End Switch

@@ -1,0 +1,7 @@
+Do $cinst.$defineProps(data)
+For col from 1 to iPropNames.$linecount step 1
+	Calculate name as iPropNames.[col].name
+	Calculate data.[name] as $cinst.$saveProp(name)
+End For
+
+Quit method OJSON.$listorrowtojson(data,kUniTypeCharacter)

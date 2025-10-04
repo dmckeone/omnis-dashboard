@@ -1,0 +1,4 @@
+
+Do $inherited.$init()
+
+Calculate $cinst.$id as pId

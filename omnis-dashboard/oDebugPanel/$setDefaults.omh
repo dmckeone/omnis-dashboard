@@ -1,0 +1,5 @@
+
+Do $inherited.$setDefaults(pRow)
+
+Calculate pRow.type as 'debug'
+Calculate pRow.name as 'debug'

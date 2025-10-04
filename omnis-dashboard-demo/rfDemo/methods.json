@@ -29,7 +29,20 @@
 
 		],
 		"lvardefs": [
-
+			{
+				"name": "debugPanel",
+				"order": 1,
+				"type": "kObjectref",
+				"subtype": "omnis-dashboard.oDebugPanel",
+				"sublen": 0
+			},
+			{
+				"name": "loadingPanel",
+				"order": 2,
+				"type": "kObjectref",
+				"subtype": "omnis-dashboard.oLoadingPanel",
+				"sublen": 0
+			}
 		]
 	},
 	{
@@ -57,48 +70,7 @@
 
 		],
 		"lvardefs": [
-			{
-				"name": "Col",
-				"order": 2,
-				"type": "kInteger",
-				"subtype": "k32bitint",
-				"sublen": 0
-			},
-			{
-				"name": "columns",
-				"order": 5,
-				"type": "kInteger",
-				"subtype": "k32bitint",
-				"sublen": 0
-			},
-			{
-				"name": "EncodeRow",
-				"order": 4,
-				"type": "kRow",
-				"subtype": "",
-				"sublen": 0
-			},
-			{
-				"name": "PanelRef",
-				"order": 3,
-				"type": "kItemref",
-				"subtype": "",
-				"sublen": 0
-			},
-			{
-				"name": "panels",
-				"order": 1,
-				"type": "kRow",
-				"subtype": "",
-				"sublen": 0
-			},
-			{
-				"name": "rows",
-				"order": 6,
-				"type": "kInteger",
-				"subtype": "k32bitint",
-				"sublen": 0
-			}
+
 		]
 	},
 	{

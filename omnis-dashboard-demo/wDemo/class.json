@@ -2,7 +2,7 @@
 	"classtype": "kWindow",
 	"omnisversion": "11.2",
 	"omnisbuild": 990040162,
-	"internalversion": 837,
+	"internalversion": 898,
 	"designtaskname": "Startup_Task",
 	"nextident": 1027,
 	"lastgroupident": 0,
@@ -18,22 +18,15 @@
 			"sublen": 0
 		},
 		{
-			"name": "iDashboardJSON",
-			"order": 10,
-			"type": "kCharacter",
-			"subtype": "kSimplechar",
-			"sublen": 100000000
-		},
-		{
-			"name": "iDownloadID",
-			"order": 6,
-			"type": "kInteger",
-			"subtype": "k32bitint",
+			"name": "iDashboard",
+			"order": 1,
+			"type": "kObject",
+			"subtype": "omnis-dashboard.oDashboard",
 			"sublen": 0
 		},
 		{
-			"name": "iDownloadPath",
-			"order": 7,
+			"name": "iDashboardJSON",
+			"order": 10,
 			"type": "kCharacter",
 			"subtype": "kSimplechar",
 			"sublen": 100000000
@@ -44,27 +37,6 @@
 			"type": "kList",
 			"subtype": "",
 			"sublen": 0
-		},
-		{
-			"name": "iOption",
-			"order": 4,
-			"type": "kCharacter",
-			"subtype": "kSimplechar",
-			"sublen": 100000000
-		},
-		{
-			"name": "iPanelsJSON",
-			"order": 9,
-			"type": "kCharacter",
-			"subtype": "kSimplechar",
-			"sublen": 100000000
-		},
-		{
-			"name": "iText",
-			"order": 3,
-			"type": "kCharacter",
-			"subtype": "kSimplechar",
-			"sublen": 100000000
 		},
 		{
 			"name": "iThemes",
@@ -117,14 +89,14 @@
 		"issubwindow": false,
 		"issupercomponent": false,
 		"keepclicks": true,
-		"left": 53,
+		"left": 437,
 		"menuedge": "kBorderChisel",
 		"menunames": "",
 		"minheight": 0,
 		"minimizebox": false,
 		"minimizeiconid": 2006,
 		"minwidth": 0,
-		"moddate": "2025-10-04 08:34:43",
+		"moddate": "2025-10-04 22:36:15",
 		"modelessdata": true,
 		"movebehind": true,
 		"osdropflags": "kOSDROPnone",

@@ -1,12 +1,18 @@
 [
 	{
 		"name": "$event",
-		"order": 1,
-		"clientexec": false,
+		"order": 16384,
 		"pvardefs": [
 
 		],
 		"lvardefs": [
+			{
+				"name": "contents",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
 			{
 				"name": "pretty",
 				"order": 1,

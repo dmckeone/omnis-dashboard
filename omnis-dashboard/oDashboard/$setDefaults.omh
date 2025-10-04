@@ -1,0 +1,11 @@
+
+Do panels.$define(panel)
+Calculate pRow.panels as panels
+Calculate pRow.debug as kFalse
+Calculate pRow.drag as kTrue
+Calculate pRow.columns as 2
+Calculate pRow.rows as 2
+Calculate pRow.title as ""
+Calculate pRow.gap as 2
+Calculate pRow.bottomMargin as 0
+Calculate pRow.theme as "light"

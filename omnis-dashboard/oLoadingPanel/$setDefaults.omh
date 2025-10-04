@@ -1,0 +1,4 @@
+
+Do $inherited.$setDefaults(pRow)
+
+Calculate pRow.type as 'loading'

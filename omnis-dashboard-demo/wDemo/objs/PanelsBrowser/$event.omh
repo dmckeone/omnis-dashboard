@@ -22,8 +22,9 @@ On evControlEvent
 		Case 'user-event'
 			OK message User Event: [pInfo.payload]
 		Case 'update-panels'
-			Calculate iPanelsJSON as OJSON.$formatjson(pInfo.payload)
-			Redraw iPanelsJSON
+			Do iDashboard.$updatePanelJSON(pInfo.payload)
+			Do method save
+			Redraw iDashboardJSON
 		Default
 			Breakpoint Unknown event
 	End Switch

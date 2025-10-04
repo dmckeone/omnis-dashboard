@@ -44,39 +44,25 @@
 		],
 		"lvardefs": [
 			{
-				"name": "change",
-				"order": 4,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000
+				"name": "debugPanel",
+				"order": 6,
+				"type": "kObjectref",
+				"subtype": "omnis-dashboard.oDebugPanel",
+				"sublen": 0
 			},
 			{
-				"name": "changeType",
-				"order": 5,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000
+				"name": "loadingPanel",
+				"order": 7,
+				"type": "kObjectref",
+				"subtype": "omnis-dashboard.oLoadingPanel",
+				"sublen": 0
 			},
 			{
-				"name": "name",
-				"order": 1,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000
-			},
-			{
-				"name": "previousStat",
-				"order": 3,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000
-			},
-			{
-				"name": "stat",
-				"order": 2,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000
+				"name": "panel",
+				"order": 8,
+				"type": "kObjectref",
+				"subtype": "omnis-dashboard.oPanel",
+				"sublen": 0
 			}
 		]
 	},
@@ -104,46 +90,11 @@
 		],
 		"lvardefs": [
 			{
-				"name": "Col",
+				"name": "json",
 				"order": 1,
-				"type": "kInteger",
-				"subtype": "k32bitint",
-				"sublen": 0
-			},
-			{
-				"name": "columns",
-				"order": 5,
-				"type": "kInteger",
-				"subtype": "k32bitint",
-				"sublen": 0
-			},
-			{
-				"name": "EncodeRow",
-				"order": 8,
-				"type": "kRow",
-				"subtype": "",
-				"sublen": 0
-			},
-			{
-				"name": "PanelRef",
-				"order": 2,
-				"type": "kItemref",
-				"subtype": "",
-				"sublen": 0
-			},
-			{
-				"name": "panels",
-				"order": 7,
-				"type": "kRow",
-				"subtype": "",
-				"sublen": 0
-			},
-			{
-				"name": "rows",
-				"order": 6,
-				"type": "kInteger",
-				"subtype": "k32bitint",
-				"sublen": 0
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
 			}
 		]
 	}

@@ -1,0 +1,15 @@
+
+
+Calculate data as OJSON.$jsontolistorrow(pJSON)
+
+# Reset props to defaults
+Do $cinst.$buildProps
+
+# Copy values in, if they exist
+Calculate columns as data.$cols.$makelist($ref.$name)
+For columns.$line from 1 to columns.$linecount step 1
+	Calculate name as columns.C1
+	If iPropNames.$search($ref.name=name,kTrue,kFalse,kFalse,kFalse)
+		Do $cinst.$loadProp(name,data.[name])
+	End If
+End For

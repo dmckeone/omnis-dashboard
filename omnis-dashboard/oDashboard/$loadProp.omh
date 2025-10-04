@@ -1,0 +1,7 @@
+Switch pName
+	Case 'panels'
+		Calculate panelJSON as OJSON.$listorrowtojson(pData,kUniTypeCharacter)
+		Do $cinst.$updatePanelJSON(panelJSON)
+	Default
+		Calculate iProps.[pName] as pData
+End Switch
