@@ -1,6 +1,6 @@
 {
   "name": "omnis-dashboard",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "scripts": {
     "build": "pnpm run type-check && vite build && mkdir dist/omnis-dashboard && mv dist/omnis-dashboard.html dist/omnis-dashboard/omnis-dashboard.htm",
