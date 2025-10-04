@@ -10,7 +10,7 @@ const stats = ref(exampleStats)
 </script>
 
 <template>
-  <Story auto-props-disabled responsive-disabled :layout="{ type: 'single', iframe: true }">
+  <Story auto-props-disabled :layout="{ type: 'single', iframe: true }">
     <template #controls>
       <HstText v-model="title" title="Title" />
       <HstJson v-model="stats" title="Stats" />

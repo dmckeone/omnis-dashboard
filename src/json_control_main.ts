@@ -1,4 +1,5 @@
 /* eslint-disable  @typescript-eslint/no-unused-vars */
+/* eslint-disable  @typescript-eslint/no-unused-expressions */
 
 import { mountApp } from "./mount"
 import { customDragPolyfill } from "./polyfill"
@@ -172,12 +173,6 @@ window.ctrl_omnis_dashboard.prototype = (function () {
   ctrl.updateCtrl = function (what: any, row: any, col: any, mustUpdate: any) {
     const controlId = this.controlId
 
-    const elem = this.getClientElem()
-
-    // center the text vertically:
-    elem.style.lineHeight = elem.style.height
-    elem.style.textAlign = "center"
-
     // Set new data on the component
     const hooks = window.ctrl_omnis_dashboard_hooks.get(controlId)
 
@@ -263,10 +258,6 @@ window.ctrl_omnis_dashboard.prototype = (function () {
    */
   ctrl.sizeChanged = function () {
     this.superclass.sizeChanged()
-
-    // center any text vertically
-    const elem = this.getClientElem()
-    elem.style.lineHeight = elem.style.height
   }
 
   return ctrl

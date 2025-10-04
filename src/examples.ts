@@ -1,6 +1,7 @@
 import { type EChartsOption } from "echarts"
 import type { PanelData } from "@/panels"
 import type { Stat } from "@/components/Stats.vue"
+import type { ImageCard } from "@/components/ImageCardPanel.vue"
 
 export const exampleStats: Array<Stat> = [
   {
@@ -22,6 +23,14 @@ export const exampleStats: Array<Stat> = [
     previous: 0.2862
   }
 ]
+
+export const exampleImageCard: ImageCard = {
+  description:
+    "A card component has a figure, a body part, and inside body there are title and actions parts",
+  imageUrl: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+  imageAlt: "Shoes",
+  buttonTitle: "Buy Now"
+}
 
 export const exampleBarChart: EChartsOption = {
   xAxis: {
@@ -114,7 +123,7 @@ export const examplePanels: Array<PanelData> = [
       { id: 4, name: "Widget 4", type: "echart", option: exampleBarChart, theme: "wonderland" }
     ]
   },
-  { id: 4, name: "Widget 4", type: "echart", option: exampleTrafficSourcesChart, theme: "roma" },
+  { id: 4, name: "Widget 4", type: "image-card", title: "Image Card", card: exampleImageCard },
   { id: 5, name: "Widget 5", type: "loading" },
   { id: 6, name: "Widget 6", type: "echart", option: exampleTrafficSourcesChart, theme: "vintage" },
   { id: 7, name: "Widget 7", type: "error", error: "Error: Uh oh!" },

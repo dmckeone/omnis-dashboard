@@ -24,7 +24,9 @@ interface DisplayStat {
   changeType: ChangeType
 }
 
-const props = withDefaults(defineProps<{ stats: Array<Stat>; title?: string }>(), { title: "" })
+const props = withDefaults(defineProps<{ stats: Array<Stat>; title?: string }>(), {
+  title: ""
+})
 
 function asInteger(value: number | string) {
   return Number(value).toLocaleString()
@@ -84,7 +86,7 @@ function formatStat(item: Stat): DisplayStat {
 const displayStats = computed(() => props.stats.map(formatStat))
 </script>
 <template>
-  <div class="@container size-full overflow-y-scroll">
+  <div class="@container w-full overflow-y-scroll">
     <div class="m-1">
       <h3 v-if="props.title" class="text-center font-semibold text-primary">
         {{ props.title }}

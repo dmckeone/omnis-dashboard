@@ -1,0 +1,11 @@
+
+On evControlEvent
+	Calculate payload as pPayload ## Must define local variable, otherwise pPayload is not defined in Javascript:
+	Switch pEvent
+		Case 'update-panels'
+			Do method updatePanels (payload)
+		Case 'user-event'
+			JavaScript: alert("User Event: " + payload)
+		Default
+			Breakpoint Unknown event
+	End Switch

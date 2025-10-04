@@ -9,5 +9,22 @@
 		"lvardefs": [
 
 		]
+	},
+	{
+		"name": "$eventclient",
+		"order": 2,
+		"clientexec": true,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "payload",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
 	}
 ]

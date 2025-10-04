@@ -18,7 +18,12 @@ On evBrowserFinishedDownload
 	
 	
 On evControlEvent
-	If pInfo.event='update-panels'
-		Calculate iPanelsJSON as OJSON.$formatjson(pInfo.payload)
-		Redraw iPanelsJSON
-	End If
+	Switch pInfo.event
+		Case 'user-event'
+			OK message User Event: [pInfo.payload]
+		Case 'update-panels'
+			Calculate iPanelsJSON as OJSON.$formatjson(pInfo.payload)
+			Redraw iPanelsJSON
+		Default
+			Breakpoint Unknown event
+	End Switch

@@ -6,9 +6,12 @@ import Chart from "./components/Chart.vue"
 import Dashboard from "./components/Dashboard.vue"
 import DebugPanel from "./components/DebugPanel.vue"
 import ErrorPanel from "./components/ErrorPanel.vue"
+import ImageCardPanel from "./components/ImageCardPanel.vue"
 import LoadingPanel from "./components/LoadingPanel.vue"
 import Stats from "./components/Stats.vue"
 import type { Stat } from "./components/Stats.vue"
+import type { ImageCard } from "./components/ImageCardPanel.vue"
+import type { ImageCardUserEvent } from "./components/ImageCardPanel.vue"
 
 //region types
 interface PanelDefinition {
@@ -61,6 +64,13 @@ interface StatsPanel extends BasePanel {
   stats?: Array<Stat>
 }
 
+interface ImageCardPanel extends BasePanel {
+  type: "image-card"
+  title?: string
+  card?: ImageCard
+}
+
+// All panel data
 export type PanelData =
   | ChartPanel
   | DashboardPanel<PanelData>
@@ -68,6 +78,10 @@ export type PanelData =
   | ErrorPanel
   | LoadingPanel
   | StatsPanel
+  | ImageCardPanel
+
+// All data return from unique panel user events
+export type PanelUserEvent = ImageCardUserEvent
 //endregion
 
 //region panels
@@ -118,6 +132,13 @@ panels["stats"] = function stats(panel: StatsPanel) {
     props: { title: panel?.title, stats: panel?.stats }
   }
 }
+
+panels["image-card"] = function stats(panel: ImageCardPanel) {
+  return {
+    component: ImageCardPanel,
+    props: { title: panel?.title, card: panel?.card }
+  }
+}
 //endregion
 
 //region utilities
@@ -132,6 +153,7 @@ export function usePanel(panel: Ref<PanelData | undefined>): ComputedRef<PanelDe
       return func(panel.value)
     } else {
       return {
+        id: -1,
         component: ErrorPanel,
         props: { error: "Invalid panel type" }
       }

@@ -100,5 +100,23 @@
 				"sublen": 0
 			}
 		]
+	},
+	{
+		"name": "updatePanels",
+		"order": 6,
+		"clientexec": false,
+		"pvardefs": [
+			{
+				"name": "pPayload",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+
+		]
 	}
 ]

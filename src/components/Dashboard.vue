@@ -4,7 +4,7 @@ import { computed, ref } from "vue"
 import { useResizeObserver } from "@vueuse/core"
 
 import Panel from "./Panel.vue"
-import { isContainer, requiresClip, type PanelData } from "@/panels"
+import { isContainer, requiresClip, type PanelData, type PanelUserEvent } from "@/panels"
 
 //region props
 const props = withDefaults(
@@ -33,13 +33,20 @@ const props = withDefaults(
 //endregion
 
 //region events
-const emit = defineEmits(["update:panels"])
+const emit = defineEmits<{
+  (e: "userEvent", id: number, panelType: string, info: PanelUserEvent): void
+  (e: "update:panels", newPanels: Array<PanelData>): void
+}>()
 
 /**
  * Emit any drag'n'drop change back to the caller via v-model
  */
-function changePanels(newPanels: Array<PanelData>) {
+function movePanels(newPanels: Array<PanelData>) {
   emit("update:panels", newPanels)
+}
+
+const onUserEvent = (id: number, panelType: string, info: PanelUserEvent) => {
+  emit("userEvent", id, panelType, info)
 }
 //endregion
 
@@ -159,7 +166,7 @@ const gridClasses = computed(() => ({
       :model-value="props.panels"
       class="grid"
       :class="gridClasses"
-      @update:model-value="changePanels"
+      @update:model-value="movePanels"
     >
       <TransitionGroup name="grid">
         <div
@@ -172,7 +179,7 @@ const gridClasses = computed(() => ({
             'overflow-visible': !requiresClip(panel)
           }"
         >
-          <Panel :config="panel" />
+          <Panel :id="panel.id" :config="panel" @user-event="onUserEvent" />
         </div>
       </TransitionGroup>
     </VueDraggable>

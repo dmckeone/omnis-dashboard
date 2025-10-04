@@ -12,7 +12,7 @@ const theme = ref("default")
 </script>
 
 <template>
-  <Story auto-props-disabled responsive-disabled>
+  <Story auto-props-disabled>
     <div class="h-screen">
       <Chart :title="title" :option="option" :theme="theme" />
     </div>

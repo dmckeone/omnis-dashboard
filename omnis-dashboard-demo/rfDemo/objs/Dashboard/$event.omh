@@ -1,8 +1,2 @@
 On evControlOpened
 	Send to trace log Opened Dashboard #[pId]
-	
-On evControlEvent
-	If pEvent='update-panels'
-		Calculate iPanelsJSON as OJSON.$formatjson(pPayload)
-		Redraw iPanelsJSON
-	End If

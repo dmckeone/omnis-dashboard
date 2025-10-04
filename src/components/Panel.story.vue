@@ -1,31 +1,39 @@
 <script setup lang="ts">
-import { exampleTrafficSourcesChart, exampleStats } from "@/examples"
+import { exampleTrafficSourcesChart, exampleStats, exampleImageCard } from "@/examples"
 
 import Panel from "./Panel.vue"
+import type { PanelUserEvent } from "@/panels.ts"
+
+const onUserEvent = (id: number, panelType: string, info: PanelUserEvent) => {
+  const payload = { id, "panel-type": panelType, ...info }
+  alert(`User Event: ${JSON.stringify(payload)}`)
+}
 </script>
 
 <template>
-  <Story auto-props-disabled responsive-disabled :layout="{ type: 'single', iframe: true }">
+  <Story auto-props-disabled :layout="{ type: 'single', iframe: true }">
     <Variant title="Loading">
       <div class="h-screen">
-        <Panel :config="{ id: 1, name: 'Widget 1', type: 'loading' }" />
+        <Panel :config="{ id: 1, name: 'Widget 1', type: 'loading' }" @user-event="onUserEvent" />
       </div>
     </Variant>
     <Variant title="Error">
       <Panel
         :config="{ id: 1, name: 'Widget 1', type: 'error', error: 'Error: Something did not work' }"
+        @user-event="onUserEvent"
       />
     </Variant>
     <Variant title="Chart">
       <div class="h-screen">
         <Panel
           :config="{ id: 1, name: 'Widget 1', type: 'echart', option: exampleTrafficSourcesChart }"
+          @user-event="onUserEvent"
         />
       </div>
     </Variant>
     <Variant title="Debug">
       <div class="h-screen">
-        <Panel :config="{ id: 1, name: 'Widget 1', type: 'debug' }" />
+        <Panel :config="{ id: 1, name: 'Widget 1', type: 'debug' }" @user-event="onUserEvent" />
       </div>
     </Variant>
     <Variant title="Dashboard">
@@ -44,6 +52,7 @@ import Panel from "./Panel.vue"
               { id: 4, name: 'Widget 4', type: 'debug' }
             ]
           }"
+          @user-event="onUserEvent"
         />
       </div>
     </Variant>
@@ -57,6 +66,21 @@ import Panel from "./Panel.vue"
             title: 'Last 30 Days',
             stats: exampleStats
           }"
+          @user-event="onUserEvent"
+        />
+      </div>
+    </Variant>
+    <Variant title="Image Card">
+      <div class="h-screen">
+        <Panel
+          :config="{
+            id: 1,
+            name: 'Widget 1',
+            type: 'image-card',
+            title: 'Image Card',
+            card: exampleImageCard
+          }"
+          @user-event="onUserEvent"
         />
       </div>
     </Variant>

@@ -3,7 +3,7 @@ import { ref, type Ref, shallowRef } from "vue"
 import { examplePanels } from "@/examples"
 
 import Dashboard from "./Dashboard.vue"
-import type { PanelData } from "@/panels"
+import type { PanelData, PanelUserEvent } from "@/panels"
 
 const debug = ref(false)
 const rows = ref(3)
@@ -12,10 +12,15 @@ const gap = ref(1)
 const theme = ref("light")
 
 const panels: Ref<Array<PanelData>> = shallowRef(examplePanels)
+
+const onUserEvent = (id: number, panelType: string, info: PanelUserEvent) => {
+  const payload = { id, "panel-type": panelType, ...info }
+  alert(`User Event: ${JSON.stringify(payload)}`)
+}
 </script>
 
 <template>
-  <Story auto-props-disabled responsive-disabled :layout="{ type: 'single', iframe: true }">
+  <Story auto-props-disabled :layout="{ type: 'single', iframe: true }">
     <template #controls>
       <HstCheckbox v-model="debug" title="Debug" />
       <HstNumber v-model="columns" title="Columns" />
@@ -75,6 +80,7 @@ const panels: Ref<Array<PanelData>> = shallowRef(examplePanels)
         :margin="2"
         :bottom-margin="40"
         :theme="theme"
+        @user-event="onUserEvent"
       />
     </div>
   </Story>

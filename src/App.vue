@@ -2,8 +2,16 @@
 import { useDashboard } from "@/stores/dashboard"
 import Dashboard from "./components/Dashboard.vue"
 import Panel from "./components/Panel.vue"
+import { useOmnis } from "@/stores/omnis.ts"
+import type { PanelUserEvent } from "@/panels.ts"
 
+const omnis = useOmnis()
 const dashboard = useDashboard()
+
+const onUserEvent = (id: number, panelType: string, info: PanelUserEvent) => {
+  const payload = { id, "panel-type": panelType, ...info }
+  omnis.emitEvent("user-event", JSON.stringify(payload))
+}
 </script>
 
 <template>
@@ -12,6 +20,7 @@ const dashboard = useDashboard()
     <Panel
       v-if="dashboard.columns === 1 && dashboard.rows === 1 && dashboard.panels.length === 1"
       :config="dashboard.panels[0]"
+      @user-event="onUserEvent"
     />
     <Dashboard
       v-else
@@ -21,6 +30,7 @@ const dashboard = useDashboard()
       :rows="dashboard.rows"
       :bottom-margin="40"
       :theme="dashboard.theme"
+      @user-event="onUserEvent"
     />
   </div>
 </template>
