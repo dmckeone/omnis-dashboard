@@ -14,26 +14,26 @@ const onUserEvent = (id: number, panelType: string, info: PanelUserEvent) => {
   <Story auto-props-disabled :layout="{ type: 'single', iframe: true }">
     <Variant title="Loading">
       <div class="h-screen">
-        <Panel :config="{ id: 1, name: 'Widget 1', type: 'loading' }" @user-event="onUserEvent" />
+        <Panel :config="{ id: 1, type: 'loading' }" @user-event="onUserEvent" />
       </div>
     </Variant>
     <Variant title="Error">
       <Panel
-        :config="{ id: 1, name: 'Widget 1', type: 'error', error: 'Error: Something did not work' }"
+        :config="{ id: 1, type: 'error', error: 'Error: Something did not work' }"
         @user-event="onUserEvent"
       />
     </Variant>
     <Variant title="Chart">
       <div class="h-screen">
         <Panel
-          :config="{ id: 1, name: 'Widget 1', type: 'echart', option: exampleTrafficSourcesChart }"
+          :config="{ id: 1, type: 'echart', option: exampleTrafficSourcesChart }"
           @user-event="onUserEvent"
         />
       </div>
     </Variant>
     <Variant title="Debug">
       <div class="h-screen">
-        <Panel :config="{ id: 1, name: 'Widget 1', type: 'debug' }" @user-event="onUserEvent" />
+        <Panel :config="{ id: 1, type: 'debug' }" @user-event="onUserEvent" />
       </div>
     </Variant>
     <Variant title="Dashboard">
@@ -41,15 +41,14 @@ const onUserEvent = (id: number, panelType: string, info: PanelUserEvent) => {
         <Panel
           :config="{
             id: 1,
-            name: 'Widget 1',
             type: 'dashboard',
             rows: 2,
             columns: 2,
             panels: [
-              { id: 1, name: 'Widget 1', type: 'debug' },
-              { id: 2, name: 'Widget 2', type: 'debug' },
-              { id: 3, name: 'Widget 3', type: 'debug' },
-              { id: 4, name: 'Widget 4', type: 'debug' }
+              { id: 1, type: 'debug' },
+              { id: 2, type: 'debug' },
+              { id: 3, type: 'debug' },
+              { id: 4, type: 'debug' }
             ]
           }"
           @user-event="onUserEvent"
@@ -61,10 +60,8 @@ const onUserEvent = (id: number, panelType: string, info: PanelUserEvent) => {
         <Panel
           :config="{
             id: 1,
-            name: 'Widget 1',
             type: 'stats',
-            title: 'Last 30 Days',
-            stats: exampleStats
+            ...exampleStats
           }"
           @user-event="onUserEvent"
         />
@@ -75,10 +72,8 @@ const onUserEvent = (id: number, panelType: string, info: PanelUserEvent) => {
         <Panel
           :config="{
             id: 1,
-            name: 'Widget 1',
             type: 'image-card',
-            title: 'Image Card',
-            card: exampleImageCard
+            ...exampleImageCard
           }"
           @user-event="onUserEvent"
         />

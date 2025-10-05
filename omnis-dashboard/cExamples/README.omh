@@ -1,0 +1,5 @@
+# Examples of various widgets that can be used for testing
+#
+# All JSON is created by using JSON.stringify() in the browser to serialize Javascript objects into strings, and then BBEdit to prefix lines with Line: and convert Tabs to Spaces
+#
+# All examples should match with https://github.com/dmckeone/omnis-dashboard/blob/main/src/examples.ts

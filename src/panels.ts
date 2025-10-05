@@ -6,12 +6,11 @@ import Chart from "./components/Chart.vue"
 import Dashboard from "./components/Dashboard.vue"
 import DebugPanel from "./components/DebugPanel.vue"
 import ErrorPanel from "./components/ErrorPanel.vue"
-import ImageCardPanel from "./components/ImageCardPanel.vue"
+import ImageCardPanel from "./components/ImageCard.vue"
 import LoadingPanel from "./components/LoadingPanel.vue"
 import Stats from "./components/Stats.vue"
 import type { Stat } from "./components/Stats.vue"
-import type { ImageCard } from "./components/ImageCardPanel.vue"
-import type { ImageCardUserEvent } from "./components/ImageCardPanel.vue"
+import type { ImageCardUserEvent } from "./components/ImageCard.vue"
 
 //region types
 interface PanelDefinition {
@@ -65,7 +64,10 @@ interface StatsPanel extends BasePanel {
 interface ImageCardPanel extends BasePanel {
   type: "image-card"
   title?: string
-  card?: ImageCard
+  imageUrl?: string
+  imageAlt?: string
+  description?: string
+  buttonTitle?: string
 }
 
 // All panel data
@@ -134,7 +136,13 @@ panels["stats"] = function stats(panel: StatsPanel) {
 panels["image-card"] = function stats(panel: ImageCardPanel) {
   return {
     component: ImageCardPanel,
-    props: { title: panel?.title, card: panel?.card }
+    props: {
+      title: panel?.title,
+      imageUrl: panel?.imageUrl,
+      imageAlt: panel?.imageAlt,
+      description: panel?.description,
+      buttonTitle: panel?.buttonTitle
+    }
   }
 }
 //endregion

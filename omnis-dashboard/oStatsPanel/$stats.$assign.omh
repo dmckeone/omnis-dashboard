@@ -1,0 +1,35 @@
+
+If pStats.$linecount=0
+	# EARLY EXIT: Just clear the stats if an empty list is passed
+	Do stats.$define(name,type,current,previous)
+	Calculate iProps.stats as stats
+	Quit method
+End If
+
+Calculate required as iProps.stats.$cols.$makelist($ref.$name)
+Calculate columns as pStats.$cols.$makelist($ref.$name)
+
+# Column validation
+For required.$line from 1 to required.$linecount step 1
+	If columns.$search($ref.C1=required.C1,kTrue,kFalse,kFalse,kFalse)=0
+		Send to trace log Stats is missing required column: [required.C1]
+		Quit method
+	End If
+End For
+
+# Data validation
+For pStats.$line from 1 to pStats.$linecount step 1
+	# Ensure data type is in the allowed list
+	Switch pStats.type
+		Case 'integer','percent'
+			# valid
+		Default
+			Send to trace log Unknown Stats type - [pStats.title]: [pStats.type]
+	End Switch
+End For
+
+# Assign new stats
+Do stats.$define(name,type,current,previous)
+Do stats.$merge(pStats,kTrue)
+
+Calculate iProps.stats as stats

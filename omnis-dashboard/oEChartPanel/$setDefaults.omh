@@ -1,0 +1,7 @@
+
+Do $inherited.$setDefaults(pRow)
+
+Calculate pRow.type as 'echart'
+Calculate pRow.title as ''
+Calculate pRow.theme as 'default'
+Calculate pRow.option as ''

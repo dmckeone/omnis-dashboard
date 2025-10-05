@@ -1,0 +1,8 @@
+
+Do $inherited.$setDefaults(pRow)
+
+Do stats.$define(name,type,current,previous)
+
+Calculate pRow.type as 'stats'
+Calculate pRow.title as ''
+Calculate pRow.stats as stats

@@ -1,0 +1,3 @@
+Do iDashboard.$reorderPanels(pPayload)
+Do method save
+Redraw iDashboardJSON

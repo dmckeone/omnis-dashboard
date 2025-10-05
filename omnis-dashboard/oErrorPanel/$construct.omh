@@ -1,0 +1,6 @@
+
+Do $inherited.$init(pId)
+
+If not(isclear(pError))
+	Calculate $cinst.$error as pError
+End If

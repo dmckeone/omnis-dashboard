@@ -1,3 +1,5 @@
 
+Do method buildThemes
+
 Do panels.$define(panel)
-Do pRow.$define(panels,debug,drag,columns,rows,title,gap,bottomMargin,theme)
+Do pRow.$define(id,type,panels,debug,drag,columns,rows,title,gap,bottomMargin,theme)

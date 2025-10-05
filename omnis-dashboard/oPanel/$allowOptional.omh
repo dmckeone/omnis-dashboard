@@ -1,0 +1,8 @@
+
+Switch name
+	Case 'id','type'
+		# Don't allow round about override of id and type
+		Quit method kFalse
+End Switch
+
+Quit method $inherited.$allowOptional(pName)

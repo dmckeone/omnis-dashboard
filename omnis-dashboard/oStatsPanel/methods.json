@@ -1,0 +1,362 @@
+[
+	{
+		"name": "$construct",
+		"order": 1,
+		"pvardefs": [
+			{
+				"name": "pId",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k64bitint",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pTitle",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2
+			},
+			{
+				"name": "pStats",
+				"order": 3,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0,
+				"param": 3
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "current",
+				"order": 7,
+				"type": "kNumber",
+				"subtype": "k6dp",
+				"sublen": 0
+			},
+			{
+				"name": "name",
+				"order": 5,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "previous",
+				"order": 8,
+				"type": "kNumber",
+				"subtype": "k6dp",
+				"sublen": 0
+			},
+			{
+				"name": "stats",
+				"order": 4,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "type",
+				"order": 6,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "$defineProps",
+		"order": 2,
+		"pvardefs": [
+			{
+				"name": "pRow",
+				"order": 1,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "current",
+				"order": 9,
+				"type": "kNumber",
+				"subtype": "k6dp",
+				"sublen": 0
+			},
+			{
+				"name": "id",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k64bitint",
+				"sublen": 0
+			},
+			{
+				"name": "name",
+				"order": 6,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "previous",
+				"order": 10,
+				"type": "kNumber",
+				"subtype": "k6dp",
+				"sublen": 0
+			},
+			{
+				"name": "stats",
+				"order": 5,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "title",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "type",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "$setDefaults",
+		"order": 3,
+		"pvardefs": [
+			{
+				"name": "pRow",
+				"order": 1,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "current",
+				"order": 5,
+				"type": "kNumber",
+				"subtype": "k6dp",
+				"sublen": 0
+			},
+			{
+				"name": "name",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "previous",
+				"order": 6,
+				"type": "kNumber",
+				"subtype": "k6dp",
+				"sublen": 0
+			},
+			{
+				"name": "stats",
+				"order": 2,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "type",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "$title",
+		"order": 4,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$title.$assign",
+		"order": 5,
+		"pvardefs": [
+			{
+				"name": "pTitle",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$stats",
+		"order": 6,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$stats.$assign",
+		"order": 7,
+		"pvardefs": [
+			{
+				"name": "pStats",
+				"order": 1,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "columns",
+				"order": 2,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "current",
+				"order": 7,
+				"type": "kNumber",
+				"subtype": "k6dp",
+				"sublen": 0
+			},
+			{
+				"name": "name",
+				"order": 5,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "previous",
+				"order": 8,
+				"type": "kNumber",
+				"subtype": "k6dp",
+				"sublen": 0
+			},
+			{
+				"name": "required",
+				"order": 3,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "stats",
+				"order": 4,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "type",
+				"order": 6,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "$loadJSONStats",
+		"order": 8,
+		"pvardefs": [
+			{
+				"name": "pStats",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "stats",
+				"order": 2,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$saveProp",
+		"order": 9,
+		"pvardefs": [
+			{
+				"name": "pName",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			},
+			{
+				"name": "pData",
+				"order": 2,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "error",
+				"order": 6,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "json",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "row",
+				"order": 4,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "stats",
+				"order": 5,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	}
+]

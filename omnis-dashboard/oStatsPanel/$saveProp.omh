@@ -1,0 +1,10 @@
+
+Switch pName
+	Case 'stats'
+		Calculate stats as iProps.stats
+		Calculate json as OJSON.$listtoobjectarray(stats,kUniTypeCharacter)
+		Calculate row as OJSON.$jsontolistorrow(json)
+		Quit method row
+	Default
+		Quit method iProps.[pName]
+End Switch

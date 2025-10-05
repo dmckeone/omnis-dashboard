@@ -1,0 +1,8 @@
+
+Do $inherited.$init(pId)
+
+If not(isclear(pTitle))
+	Calculate $cinst.$title as pTitle
+End If
+
+Do $cinst.$assignOptional(pOptional)

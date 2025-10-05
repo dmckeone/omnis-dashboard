@@ -1,0 +1,8 @@
+
+Do options.$define(description,buttonTitle)
+Calculate options.description as "A card component has a figure, a body part, and inside body there are title and actions parts"
+Calculate options.buttonTitle as "Buy Now"
+
+Calculate panel as $objects.oImageCard.$newref(pId,'Image Card',"https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp","Shoes",options)
+
+Quit method panel

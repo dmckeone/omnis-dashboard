@@ -29,37 +29,7 @@
 
 		],
 		"lvardefs": [
-			{
-				"name": "debugPanel",
-				"order": 1,
-				"type": "kObjectref",
-				"subtype": "omnis-dashboard.oDebugPanel",
-				"sublen": 0
-			},
-			{
-				"name": "loadingPanel",
-				"order": 2,
-				"type": "kObjectref",
-				"subtype": "omnis-dashboard.oLoadingPanel",
-				"sublen": 0
-			}
-		]
-	},
-	{
-		"name": "buildThemes",
-		"order": 4,
-		"clientexec": false,
-		"pvardefs": [
 
-		],
-		"lvardefs": [
-			{
-				"name": "theme",
-				"order": 1,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000
-			}
 		]
 	},
 	{
@@ -70,11 +40,17 @@
 
 		],
 		"lvardefs": [
-
+			{
+				"name": "json",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
 		]
 	},
 	{
-		"name": "updatePanels",
+		"name": "reorderPanels",
 		"order": 6,
 		"clientexec": false,
 		"pvardefs": [

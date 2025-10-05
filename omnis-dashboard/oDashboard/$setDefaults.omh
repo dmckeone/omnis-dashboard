@@ -1,5 +1,7 @@
 
 Do panels.$define(panel)
+Calculate pRow.id as -1
+Calculate pRow.type as 'dashboard'
 Calculate pRow.panels as panels
 Calculate pRow.debug as kFalse
 Calculate pRow.drag as kTrue

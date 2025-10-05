@@ -1,0 +1,18 @@
+
+Calculate panelIds as OJSON.$jsontolistorrow(pJSON)
+
+Calculate oldPanels as iProps.panels
+
+# Find all panels in the oldPanels and add them in the order of the new panels
+Do panels.$define(panel)
+For panelIds.$line from 1 to panelIds.$linecount step 1
+	Do oldPanels.$search($ref.panel.$id=panelIds.C1,kTrue,kFalse,kFalse,kFalse) Returns line
+	If not(line>0)
+		Send to trace log Unable to locate panel ID [panelIds.C1] when re-ordering
+		Jump to start of loop
+	End If
+	Calculate panel as oldPanels.panel
+	Do panels.$add(panel)
+End For
+
+Calculate iProps.panels as panels

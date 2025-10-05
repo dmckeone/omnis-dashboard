@@ -1,0 +1,40 @@
+
+Begin text block
+Line: {
+Line:   "xAxis": {
+Line:       "type": "category",
+Line:       "data": [
+Line:           "Mon",
+Line:           "Tue",
+Line:           "Wed",
+Line:           "Thu",
+Line:           "Fri",
+Line:           "Sat",
+Line:           "Sun"
+Line:       ]
+Line:   },
+Line:   "yAxis": {
+Line:       "type": "value"
+Line:   },
+Line:   "series": [
+Line:       {
+Line:           "data": [
+Line:               120,
+Line:               200,
+Line:               150,
+Line:               80,
+Line:               70,
+Line:               110,
+Line:               130
+Line:           ],
+Line:           "type": "bar"
+Line:       }
+Line:   ]
+Line: }
+End text block
+Get text block option
+
+
+Calculate panel as $objects.oEChartPanel.$newref(pId,'Bar Chart',pTheme,option)
+
+Quit method panel

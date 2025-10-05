@@ -1,0 +1,8 @@
+# Get all panels of a specific type (where type is the string identifier for the component, like "echart" or "debug" or "loading")
+
+Calculate panels as iProps.panels
+
+Do panels.$search($ref.panel.$panelType=pType,kTrue,kFalse,kTrue,kTrue)
+Do panels.$remove(kListKeepSelected)
+
+Quit method panels

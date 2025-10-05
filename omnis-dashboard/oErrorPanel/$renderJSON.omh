@@ -1,0 +1,4 @@
+
+# Always override this panel to avoid circular loops with oPanel
+
+Quit method $cinst.$saveJSON()

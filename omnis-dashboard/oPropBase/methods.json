@@ -63,7 +63,7 @@
 		]
 	},
 	{
-		"name": "$setDefaults",
+		"name": "$defineSerialize",
 		"order": 6,
 		"pvardefs": [
 			{
@@ -80,8 +80,25 @@
 		]
 	},
 	{
-		"name": "$loadProp",
+		"name": "$setDefaults",
 		"order": 7,
+		"pvardefs": [
+			{
+				"name": "pRow",
+				"order": 1,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$loadProp",
+		"order": 8,
 		"pvardefs": [
 			{
 				"name": "pName",
@@ -126,7 +143,7 @@
 	},
 	{
 		"name": "$saveProp",
-		"order": 8,
+		"order": 9,
 		"pvardefs": [
 			{
 				"name": "pName",
@@ -135,14 +152,6 @@
 				"subtype": "kSimplechar",
 				"sublen": 100000000,
 				"param": 1
-			},
-			{
-				"name": "pData",
-				"order": 2,
-				"type": "kFieldreference",
-				"subtype": 0,
-				"sublen": 0,
-				"param": 2
 			}
 		],
 		"lvardefs": [
@@ -150,8 +159,18 @@
 		]
 	},
 	{
+		"name": "$renderJSON",
+		"order": 10,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
 		"name": "$saveJSON",
-		"order": 9,
+		"order": 11,
 		"pvardefs": [
 			{
 				"name": "pJSON",
@@ -188,7 +207,7 @@
 	},
 	{
 		"name": "$loadJSON",
-		"order": 10,
+		"order": 12,
 		"pvardefs": [
 			{
 				"name": "pJSON",
@@ -217,6 +236,53 @@
 			{
 				"name": "name",
 				"order": 5,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "$allowOptional",
+		"order": 13,
+		"pvardefs": [
+			{
+				"name": "pName",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$assignOptional",
+		"order": 14,
+		"pvardefs": [
+			{
+				"name": "pOptional",
+				"order": 1,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "columns",
+				"order": 2,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "name",
+				"order": 3,
 				"type": "kCharacter",
 				"subtype": "kSimplechar",
 				"sublen": 100000000

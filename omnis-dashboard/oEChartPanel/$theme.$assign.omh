@@ -1,0 +1,9 @@
+
+Do iThemes.$search($ref.theme=pTheme,kTrue,kFalse,kFalse,kFalse) Returns found
+If not(found)
+	# EARLY EXIT: Invalid theme name.  Must be supported by the omnis-dashboard control
+	Send to trace log Unable to set $theme for oEChartPanel due to invalid theme name: [pTheme]
+	Quit method
+End If
+
+Calculate iProps.theme as pTheme

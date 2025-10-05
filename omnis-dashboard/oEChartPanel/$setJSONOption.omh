@@ -1,0 +1,14 @@
+If pOption=''
+	# EARLY EXIT: Set option to blank
+	Calculate iProps.option as ''
+	Quit method
+End If
+
+Calculate test as OJSON.$formatjson(pOption)
+If pos('parse error: ',test)>0
+	# EARLY EXIT: Invalid JSON
+	Send to trace log Unable to set $option for oEChartPanel due to invalid JSON: [test]
+	Quit method
+End If
+
+Calculate iProps.option as OJSON.$jsontolistorrow(pOption)

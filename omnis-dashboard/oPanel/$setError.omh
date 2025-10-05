@@ -1,0 +1,4 @@
+
+Calculate iError as kTrue
+Calculate iErrorText as pErrorText
+Calculate iErrorPanel as $libs.//omnis-dashboard//.$objects.oLoadingPanel.$newref(iProps.id,pErrorText)

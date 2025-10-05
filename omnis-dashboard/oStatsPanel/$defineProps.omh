@@ -1,0 +1,4 @@
+
+Do stats.$define(name,type,current,previous)
+
+Do pRow.$define(id,type,title,stats)

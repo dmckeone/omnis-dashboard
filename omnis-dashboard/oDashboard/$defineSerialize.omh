@@ -1,0 +1,9 @@
+
+Do panels.$define(panel)
+If isclear(iProps.id)|iProps.id=-1
+	# Top-level dashboard
+	Do pRow.$define(panels,debug,drag,columns,rows,title,gap,bottomMargin,theme)
+Else
+	# Panel dashboard
+	Do pRow.$define(id,type,panels,debug,drag,columns,rows,title,gap,bottomMargin,theme)
+End If

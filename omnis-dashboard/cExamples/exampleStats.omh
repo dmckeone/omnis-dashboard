@@ -1,0 +1,9 @@
+
+Do stats.$define(name,type,current,previous)
+Do stats.$add("Total Subscribers",'integer',71897,70946)
+Do stats.$add("Avg. Open Rate",'percent',0.5816,0.5614)
+Do stats.$add("Avg. Click Rate",'percent',0.2457,0.2862)
+
+Calculate panel as $objects.oStatsPanel.$newref(pId,'Last 30 Days',stats)
+
+Quit method panel

@@ -5,6 +5,12 @@ Switch pType
 		Quit method $clib.$objects.oDebugPanel.$newref()
 	Case 'loading'
 		Quit method $clib.$objects.oLoadingPanel.$newref()
+	Case 'error'
+		Quit method $clib.$objects.oErrorPanel.$newref()
+	Case 'echart'
+		Quit method $clib.$objects.oEChartPanel.$newref()
+	Case 'stats'
+		Quit method $clib.$objects.oStatsPanel.$newref()
 	Default
 		Breakpoint Missing panel type
 End Switch

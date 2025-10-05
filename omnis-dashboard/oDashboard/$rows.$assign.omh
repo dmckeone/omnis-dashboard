@@ -1,0 +1,12 @@
+
+If pRows<1
+	Send to trace log Unable to set Dashboard rows below 1
+	Quit method
+End If
+
+If pRows>10
+	Send to trace log Unable to set Dashboard rows to more than 10
+	Quit method
+End If
+
+Calculate iProps.rows as pRows

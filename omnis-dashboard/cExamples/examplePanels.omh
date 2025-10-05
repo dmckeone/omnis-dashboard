@@ -1,0 +1,65 @@
+
+Calculate dashboardPanel as $libs.//omnis-dashboard//.$objects.oDashboard.$newref()
+
+# ------------------
+# 1 - STATS
+# ------------------
+Do method exampleStats (1) Returns panel
+Do dashboardPanel.$addPanel(panel)
+
+# ------------------
+# 2 - TRAFFIC SOURCES (INFOGRAPHIC)
+# ------------------
+Do method exampleTrafficSources (2,'infographic') Returns panel
+Do dashboardPanel.$addPanel(panel)
+
+# ------------------
+# 3 - SUB DASHBOARD
+# ------------------
+Calculate subDashboardPanel as $libs.//omnis-dashboard//.$objects.oDashboard.$newref(3)
+
+Calculate panel as $libs.//omnis-dashboard//.$objects.oDebugPanel.$newref(1,'debug')
+Do subDashboardPanel.$addPanel(panel)
+
+Do method exampleBarChart (2,'shine') Returns panel
+Do subDashboardPanel.$addPanel(panel)
+
+Calculate panel as $libs.//omnis-dashboard//.$objects.oLoadingPanel.$newref(3)
+Do subDashboardPanel.$addPanel(panel)
+
+Do method exampleBarChart (4,'wonderland') Returns panel
+Do subDashboardPanel.$addPanel(panel)
+
+Do dashboardPanel.$addPanel(subDashboardPanel)
+
+# ------------------
+# 4 - IMAGE CARD
+# ------------------
+Do method exampleImageCard (4) Returns panel
+Do dashboardPanel.$addPanel(panel)
+
+# ------------------
+# 5 -LOADING
+# ------------------
+Calculate panel as $libs.//omnis-dashboard//.$objects.oLoadingPanel.$newref(5)
+Do dashboardPanel.$addPanel(panel)
+
+# ------------------
+# 6 - TRAFFIC SOURCES (VINTAGE)
+# ------------------
+Do method exampleTrafficSources (6,'vintage') Returns panel
+Do dashboardPanel.$addPanel(panel)
+
+# ------------------
+# 7 - Error
+# ------------------
+Calculate panel as $libs.//omnis-dashboard//.$objects.oErrorPanel.$newref(7,"Error: Uh oh!")
+Do dashboardPanel.$addPanel(panel)
+
+# ------------------
+# 8 - Line Chart
+# ------------------
+Do method exampleLineChart (8,'default') Returns panel
+Do dashboardPanel.$addPanel(panel)
+
+Quit method dashboardPanel

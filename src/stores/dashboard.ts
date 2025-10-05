@@ -60,6 +60,14 @@ export const useDashboard = defineStore("Dashboard", () => {
   const omnis = useOmnis()
   const data: Ref<Dashboard> = toRef(omnis, "data")
 
+  const emitPanelUpdate = (newPanels: PanelData[]) => {
+    // Extract just the IDs of the panels to be emitted -- this is enough information to allow
+    // the develoepr to re-order the panels in-memory without overwriting other data that may
+    // only be present on their side
+    const panelIds = newPanels.map((panel: PanelData) => panel.id)
+    omnis.emitEvent("reorder-panels", JSON.stringify(panelIds))
+  }
+
   // DEV NOTE: shallowReactive is required to avoid Pinia's reactive wrapping `panels` (an array container)
   return shallowReactive({
     debug: computed(() => data.value?.debug ?? false),
@@ -74,7 +82,7 @@ export const useDashboard = defineStore("Dashboard", () => {
       get: () => data.value?.panels ?? [],
       set: (newPanels: PanelData[]) => {
         data.value = { ...data.value, panels: newPanels }
-        omnis.emitEvent("update-panels", JSON.stringify(newPanels))
+        emitPanelUpdate(newPanels)
       }
     })
   })

@@ -1,4 +1,4 @@
-Do $cinst.$defineProps(data)
+Do $cinst.$defineSerialize(data)
 For col from 1 to iPropNames.$linecount step 1
 	Calculate name as iPropNames.[col].name
 	Calculate data.[name] as $cinst.$saveProp(name)

@@ -1,0 +1,5 @@
+# Method for rendering this component to a dashboard control
+#
+# May be overriden if panel substitutions are required for certain circumstances
+
+Quit method $cinst.$saveJSON()

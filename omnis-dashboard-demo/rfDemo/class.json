@@ -2,7 +2,7 @@
 	"classtype": "kRemoteForm",
 	"omnisversion": "11.2",
 	"omnisbuild": 990040162,
-	"internalversion": 350,
+	"internalversion": 367,
 	"designtaskname": "rtWeb",
 	"nextident": 1008,
 	"lastgroupident": 0,
@@ -11,16 +11,9 @@
 	],
 	"ivardefs": [
 		{
-			"name": "iBrowserRef",
-			"order": 1,
-			"type": "kItemref",
-			"subtype": "",
-			"sublen": 0
-		},
-		{
 			"name": "iDashboard",
 			"order": 6,
-			"type": "kObject",
+			"type": "kObjectref",
 			"subtype": "omnis-dashboard.oDashboard",
 			"sublen": 0
 		},
@@ -30,13 +23,6 @@
 			"type": "kCharacter",
 			"subtype": "kSimplechar",
 			"sublen": 100000000
-		},
-		{
-			"name": "iThemes",
-			"order": 3,
-			"type": "kList",
-			"subtype": "",
-			"sublen": 0
 		}
 	],
 	"properties": {
@@ -76,7 +62,7 @@
 		"layouttype": "kLayoutTypeResponsive",
 		"left": 340,
 		"menulineheight": 44,
-		"moddate": "2025-10-04 22:25:11",
+		"moddate": "2025-10-05 12:24:01",
 		"okkeyobject": "",
 		"serverlessclient": false,
 		"showascheckedout": false,

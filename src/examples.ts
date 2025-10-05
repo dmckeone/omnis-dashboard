@@ -1,30 +1,34 @@
 import { type EChartsOption } from "echarts"
 import type { PanelData } from "@/panels"
-import type { Stat } from "@/components/Stats.vue"
-import type { ImageCard } from "@/components/ImageCardPanel.vue"
+import type { Stats } from "@/components/Stats.vue"
+import { type ImageCard } from "@/components/ImageCard.vue"
 
-export const exampleStats: Array<Stat> = [
-  {
-    name: "Total Subscribers",
-    type: "integer",
-    current: 71897,
-    previous: 70946
-  },
-  {
-    name: "Avg. Open Rate",
-    type: "percent",
-    current: 0.5816,
-    previous: 0.5614
-  },
-  {
-    name: "Avg. Click Rate",
-    type: "percent",
-    current: 0.2457,
-    previous: 0.2862
-  }
-]
+export const exampleStats: Stats = {
+  title: "Last 30 Days",
+  stats: [
+    {
+      name: "Total Subscribers",
+      type: "integer",
+      current: 71897,
+      previous: 70946
+    },
+    {
+      name: "Avg. Open Rate",
+      type: "percent",
+      current: 0.5816,
+      previous: 0.5614
+    },
+    {
+      name: "Avg. Click Rate",
+      type: "percent",
+      current: 0.2457,
+      previous: 0.2862
+    }
+  ]
+}
 
 export const exampleImageCard: ImageCard = {
+  title: "Image Card",
   description:
     "A card component has a figure, a body part, and inside body there are title and actions parts",
   imageUrl: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
@@ -102,31 +106,28 @@ export const exampleTrafficSourcesChart: EChartsOption = {
 }
 
 export const examplePanels: Array<PanelData> = [
-  { id: 1, name: "Widget 1", type: "stats", title: "Last 30 Days", stats: exampleStats },
+  { id: 1, type: "stats", ...exampleStats },
   {
     id: 2,
-    name: "Widget 2",
     type: "echart",
     option: exampleTrafficSourcesChart,
     theme: "infographic"
   },
   {
     id: 3,
-    name: "Widget 3",
     type: "dashboard",
     rows: 2,
     columns: 2,
     panels: [
-      { id: 1, name: "Widget 1", type: "debug" },
-      { id: 2, name: "Widget 2", type: "echart", option: exampleBarChart, theme: "shine" },
-      { id: 3, name: "Widget 3", type: "loading" },
-      { id: 4, name: "Widget 4", type: "echart", option: exampleBarChart, theme: "wonderland" }
+      { id: 1, type: "debug" },
+      { id: 2, type: "echart", option: exampleBarChart, theme: "shine" },
+      { id: 3, type: "loading" },
+      { id: 4, type: "echart", option: exampleBarChart, theme: "wonderland" }
     ]
   },
-  { id: 4, name: "Widget 4", type: "image-card", title: "Image Card", card: exampleImageCard },
-  { id: 5, name: "Widget 5", type: "loading" },
-  { id: 6, name: "Widget 6", type: "echart", option: exampleTrafficSourcesChart, theme: "vintage" },
-  { id: 7, name: "Widget 7", type: "error", error: "Error: Uh oh!" },
-  { id: 8, name: "Widget 8", type: "echart", option: exampleTrafficSourcesChart },
-  { id: 9, name: "Widget 9", type: "echart", option: exampleLineChart }
+  { id: 4, type: "image-card", ...exampleImageCard },
+  { id: 5, type: "loading" },
+  { id: 6, type: "echart", option: exampleTrafficSourcesChart, theme: "vintage" },
+  { id: 7, type: "error", error: "Error: Uh oh!" },
+  { id: 8, type: "echart", option: exampleLineChart }
 ]

@@ -1,0 +1,7 @@
+
+If pBottomMargin<0
+	Send to trace log Unable to set bottom margin to less than 0
+	Quit method
+End If
+
+Calculate iProps.bottomMargin as pBottomMargin

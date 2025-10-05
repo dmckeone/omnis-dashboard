@@ -1,0 +1,12 @@
+
+If pGap<1
+	Send to trace log Unable to set panel gap to less than 1
+	Quit method
+End If
+
+If pGap>4
+	Send to trace log Unable to set panel gap to more than 4 (CSS Grid limit)
+	Quit method
+End If
+
+Calculate iProps.gap as pGap

@@ -1,0 +1,69 @@
+
+Begin text block
+Line: {
+Line:   "title": {
+Line:     "text": "Traffic Sources",
+Line:     "left": "center"
+Line:   },
+Line:   "tooltip": {
+Line:     "trigger": "item",
+Line:     "formatter": "{a} <br/>{b} : {c} ({d}%)"
+Line:   },
+Line:   "legend": {
+Line:     "orient": "vertical",
+Line:     "left": "left",
+Line:     "data": [
+Line:       "Direct",
+Line:       "Email",
+Line:       "Ad Networks",
+Line:       "Video Ads",
+Line:       "Search Engines"
+Line:     ]
+Line:   },
+Line:   "series": [
+Line:     {
+Line:       "name": "Traffic Sources",
+Line:       "type": "pie",
+Line:       "radius": "55%",
+Line:       "center": [
+Line:         "50%",
+Line:         "60%"
+Line:       ],
+Line:       "data": [
+Line:         {
+Line:           "value": 335,
+Line:           "name": "Direct"
+Line:         },
+Line:         {
+Line:           "value": 310,
+Line:           "name": "Email"
+Line:         },
+Line:         {
+Line:           "value": 234,
+Line:           "name": "Ad Networks"
+Line:         },
+Line:         {
+Line:           "value": 135,
+Line:           "name": "Video Ads"
+Line:         },
+Line:         {
+Line:           "value": 1548,
+Line:           "name": "Search Engines"
+Line:         }
+Line:       ],
+Line:       "emphasis": {
+Line:         "itemStyle": {
+Line:           "shadowBlur": 10,
+Line:           "shadowOffsetX": 0
+Line:         }
+Line:       }
+Line:     }
+Line:   ]
+Line: }
+End text block
+Get text block option
+
+
+Calculate panel as $objects.oEChartPanel.$newref(pId,'',pTheme,option)
+
+Quit method panel

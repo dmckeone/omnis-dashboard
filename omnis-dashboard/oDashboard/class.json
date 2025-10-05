@@ -2,14 +2,20 @@
 	"classtype": "kObjectclass",
 	"omnisversion": "11.2",
 	"omnisbuild": 990040162,
-	"internalversion": 81,
-	"superclass": "oPropBase",
+	"internalversion": 123,
+	"superclass": "oPanel",
 	"designtaskname": "Startup_Task",
 	"cvardefs": [
 
 	],
 	"ivardefs": [
-
+		{
+			"name": "iThemes",
+			"order": 1,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		}
 	],
 	"properties": {
 		"canremotedebugwhenlocked": false,
@@ -25,7 +31,7 @@
 		"editordata": "",
 		"external": true,
 		"issupercomponent": false,
-		"moddate": "2025-10-04 22:31:10",
+		"moddate": "2025-10-05 12:01:54",
 		"selfcontained": false,
 		"showascheckedout": false,
 		"userinfo": "",

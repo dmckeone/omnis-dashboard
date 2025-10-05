@@ -1,0 +1,265 @@
+[
+	{
+		"name": "README",
+		"order": 1,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "exampleStats",
+		"order": 2,
+		"pvardefs": [
+			{
+				"name": "pId",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k64bitint",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "current",
+				"order": 7,
+				"type": "kNumber",
+				"subtype": "k4dp",
+				"sublen": 0
+			},
+			{
+				"name": "name",
+				"order": 5,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "option",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "panel",
+				"order": 2,
+				"type": "kObjectref",
+				"subtype": "oEChartPanel",
+				"sublen": 0
+			},
+			{
+				"name": "previous",
+				"order": 8,
+				"type": "kNumber",
+				"subtype": "k4dp",
+				"sublen": 0
+			},
+			{
+				"name": "stats",
+				"order": 4,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "type",
+				"order": 6,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "exampleImageCard",
+		"order": 3,
+		"pvardefs": [
+			{
+				"name": "pId",
+				"order": 7,
+				"type": "kInteger",
+				"subtype": "k64bitint",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "buttonTitle",
+				"order": 10,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "description",
+				"order": 9,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "options",
+				"order": 8,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "panel",
+				"order": 6,
+				"type": "kObjectref",
+				"subtype": "oImageCard",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "exampleBarChart",
+		"order": 4,
+		"pvardefs": [
+			{
+				"name": "pId",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k64bitint",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pTheme",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "option",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "panel",
+				"order": 1,
+				"type": "kObjectref",
+				"subtype": "oEChartPanel",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "exampleLineChart",
+		"order": 5,
+		"pvardefs": [
+			{
+				"name": "pId",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k64bitint",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pTheme",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "option",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "panel",
+				"order": 2,
+				"type": "kObjectref",
+				"subtype": "oEChartPanel",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "exampleTrafficSources",
+		"order": 6,
+		"pvardefs": [
+			{
+				"name": "pId",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k64bitint",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pTheme",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "option",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "panel",
+				"order": 1,
+				"type": "kObjectref",
+				"subtype": "oEChartPanel",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "examplePanels",
+		"order": 7,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "dashboardPanel",
+				"order": 4,
+				"type": "kObjectref",
+				"subtype": "oDashboard",
+				"sublen": 0
+			},
+			{
+				"name": "panel",
+				"order": 8,
+				"type": "kObjectref",
+				"subtype": "oPanel",
+				"sublen": 0
+			},
+			{
+				"name": "subDashboardPanel",
+				"order": 7,
+				"type": "kObjectref",
+				"subtype": "oDashboard",
+				"sublen": 0
+			}
+		]
+	}
+]

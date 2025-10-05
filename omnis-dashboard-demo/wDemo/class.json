@@ -2,7 +2,7 @@
 	"classtype": "kWindow",
 	"omnisversion": "11.2",
 	"omnisbuild": 990040162,
-	"internalversion": 898,
+	"internalversion": 918,
 	"designtaskname": "Startup_Task",
 	"nextident": 1027,
 	"lastgroupident": 0,
@@ -20,7 +20,7 @@
 		{
 			"name": "iDashboard",
 			"order": 1,
-			"type": "kObject",
+			"type": "kObjectref",
 			"subtype": "omnis-dashboard.oDashboard",
 			"sublen": 0
 		},
@@ -96,7 +96,7 @@
 		"minimizebox": false,
 		"minimizeiconid": 2006,
 		"minwidth": 0,
-		"moddate": "2025-10-04 22:36:15",
+		"moddate": "2025-10-05 12:20:51",
 		"modelessdata": true,
 		"movebehind": true,
 		"osdropflags": "kOSDROPnone",

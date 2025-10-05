@@ -1,4 +1,10 @@
 Switch pName
+	Case 'id'
+		If isclear(iProps.id)|iProps.id=-1
+			Quit method #NULL
+		Else
+			Quit method iProps.[pName]
+		End If
 	Case 'panels'
 		Do savedPanels.$define(panelJSON)
 		Calculate panels as iProps.panels

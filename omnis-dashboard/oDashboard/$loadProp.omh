@@ -1,7 +1,11 @@
 Switch pName
+	Case 'id'
+		If not(isclear(pData))&pData<>-1
+			Calculate iProps.[pName] as pData
+		End If
 	Case 'panels'
 		Calculate panelJSON as OJSON.$listorrowtojson(pData,kUniTypeCharacter)
-		Do $cinst.$updatePanelJSON(panelJSON)
+		Do $cinst.$loadPanelsJSON(panelJSON)
 	Default
 		Calculate iProps.[pName] as pData
 End Switch

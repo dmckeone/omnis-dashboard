@@ -21,8 +21,8 @@ On evControlEvent
 	Switch pInfo.event
 		Case 'user-event'
 			OK message User Event: [pInfo.payload]
-		Case 'update-panels'
-			Do iDashboard.$updatePanelJSON(pInfo.payload)
+		Case 'reorder-panels'
+			Do iDashboard.$reorderPanels(pInfo.payload)
 			Do method save
 			Redraw iDashboardJSON
 		Default

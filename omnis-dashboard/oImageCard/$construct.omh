@@ -1,0 +1,16 @@
+
+Do $inherited.$init(pId)
+
+If not(isclear(pTitle))
+	Calculate $cinst.$title as pTitle
+End If
+
+If not(isclear(pImageUrl))
+	Calculate $cinst.$imageUrl as pImageUrl
+End If
+
+If not(isclear(pImageAlt))
+	Calculate $cinst.$imageAlt as pImageAlt
+End If
+
+Do $cinst.$assignOptional(pOptional)

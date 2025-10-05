@@ -1,9 +1,2 @@
 
-Calculate debugPanel as $libs.//omnis-dashboard//.$objects.oDebugPanel.$newref(1,'debug-1')
-Do iDashboard.$addPanel(debugPanel)
-
-Calculate debugPanel as $libs.//omnis-dashboard//.$objects.oDebugPanel.$newref(2,'debug-2')
-Do iDashboard.$addPanel(debugPanel)
-
-Calculate loadingPanel as $libs.//omnis-dashboard//.$objects.oLoadingPanel.$newref(3)
-Do iDashboard.$addPanel(loadingPanel)
+Do code method omnis-dashboard.cExamples/examplePanels Returns iDashboard

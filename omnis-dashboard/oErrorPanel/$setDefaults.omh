@@ -1,0 +1,5 @@
+
+Do $inherited.$setDefaults(pRow)
+
+Calculate pRow.type as 'error'
+Calculate pRow.error as '<unknown>'

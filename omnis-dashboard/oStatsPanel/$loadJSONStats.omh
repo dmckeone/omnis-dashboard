@@ -1,0 +1,3 @@
+
+Calculate stats as OJSON.$jsontolistorrow(pStats)
+Calculate $cinst.$stats as stats

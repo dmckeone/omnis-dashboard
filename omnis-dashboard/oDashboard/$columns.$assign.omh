@@ -1,0 +1,12 @@
+
+If pColumns<1
+	Send to trace log Unable to set Dashboard columns below 1
+	Quit method
+End If
+
+If pColumns>10
+	Send to trace log Unable to set Dashboard columns to more than 10
+	Quit method
+End If
+
+Calculate iProps.columns as pColumns

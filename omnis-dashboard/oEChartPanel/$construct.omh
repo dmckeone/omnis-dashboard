@@ -1,0 +1,16 @@
+
+Do method buildThemes
+
+Do $inherited.$init(pId)
+
+If not(isclear(ptTitle))
+	Calculate $cinst.$title as ptTitle
+End If
+
+If not(isclear(pTheme))
+	Calculate $cinst.$theme as pTheme
+End If
+
+If not(isclear(pJSONOption))
+	Do $cinst.$setJSONOption(pJSONOption)
+End If

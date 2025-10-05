@@ -1,0 +1,3 @@
+
+Calculate iLoading as pLoading
+Calculate iLoadingPanel as $libs.//omnis-dashboard//.$objects.oLoadingPanel.$newref(iProps.id)

@@ -2,14 +2,48 @@
 	"classtype": "kObjectclass",
 	"omnisversion": "11.2",
 	"omnisbuild": 990040162,
-	"internalversion": 46,
+	"internalversion": 59,
 	"superclass": "oPropBase",
 	"designtaskname": "Startup_Task",
 	"cvardefs": [
 
 	],
 	"ivardefs": [
-
+		{
+			"name": "iError",
+			"order": 2,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "iErrorPanel",
+			"order": 5,
+			"type": "kObjectref",
+			"subtype": "oErrorPanel",
+			"sublen": 0
+		},
+		{
+			"name": "iErrorText",
+			"order": 3,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iLoading",
+			"order": 1,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "iLoadingPanel",
+			"order": 4,
+			"type": "kObjectref",
+			"subtype": "oLoadingPanel",
+			"sublen": 0
+		}
 	],
 	"properties": {
 		"canremotedebugwhenlocked": false,
@@ -25,7 +59,7 @@
 		"editordata": "",
 		"external": true,
 		"issupercomponent": false,
-		"moddate": "2025-10-04 22:09:54",
+		"moddate": "2025-10-05 11:54:33",
 		"selfcontained": false,
 		"showascheckedout": false,
 		"userinfo": "",

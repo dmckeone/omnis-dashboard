@@ -9,6 +9,11 @@ export interface Stat {
   previous: number
 }
 
+export interface Stats {
+  title?: string
+  stats: Stat[]
+}
+
 enum ChangeType {
   Unchanged = "no change",
   Decrease = "decrease",
@@ -24,7 +29,7 @@ interface DisplayStat {
   changeType: ChangeType
 }
 
-const props = withDefaults(defineProps<{ stats: Array<Stat>; title?: string }>(), {
+const props = withDefaults(defineProps<Stats>(), {
   title: ""
 })
 

@@ -89,9 +89,9 @@
 	"layout": {
 		"1024": {
 			"left": 8,
-			"top": 53,
+			"top": 13,
 			"width": 391,
-			"height": 471,
+			"height": 511,
 			"align": "kLeftJst",
 			"dragborder": false,
 			"edgefloat": "kEFbottom",

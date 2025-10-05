@@ -1,0 +1,10 @@
+
+Calculate columns as pOptional.$cols.$makelist($ref.$name)
+For columns.$line from 1 to columns.$linecount step 1
+	Calculate name as columns.C1
+	If $cinst.$allowOptional(name)
+		If iProps.$cols.$findname(name)&$cinst.$[name].$cando
+			Calculate $cinst.$[name] as pOptional.[name]
+		End If
+	End If
+End For

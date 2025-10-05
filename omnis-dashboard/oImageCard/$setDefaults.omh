@@ -1,0 +1,9 @@
+
+Do $inherited.$setDefaults(pRow)
+
+Calculate pRow.type as 'image-card'
+Calculate pRow.title as ''
+Calculate pRow.imageUrl as ''
+Calculate pRow.imageAlt as ''
+Calculate pRow.description as ''
+Calculate pRow.buttonTitle as ''

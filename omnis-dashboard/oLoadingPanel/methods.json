@@ -15,5 +15,15 @@
 		"lvardefs": [
 
 		]
+	},
+	{
+		"name": "$renderJSON",
+		"order": 3,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
 	}
 ]
