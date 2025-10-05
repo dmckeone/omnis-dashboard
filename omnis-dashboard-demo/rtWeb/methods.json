@@ -18,16 +18,5 @@
 		"lvardefs": [
 
 		]
-	},
-	{
-		"name": "New Method",
-		"order": 3,
-		"pvardefs": [
-
-		],
-		"lvardefs": [
-
-		],
-		"empty": true
 	}
 ]
