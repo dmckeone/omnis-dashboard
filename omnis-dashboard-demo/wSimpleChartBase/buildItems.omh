@@ -1,0 +1,8 @@
+
+Do options.$define(rows,columns)
+Calculate options.rows as 1
+Calculate options.columns as 1
+
+Calculate iDashboard as $libs.//omnis-dashboard//.$objects.oDashboard.$newref(-1,options)
+
+Do $cinst.$createPanel()

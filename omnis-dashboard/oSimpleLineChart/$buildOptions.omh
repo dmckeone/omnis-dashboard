@@ -1,0 +1,23 @@
+
+Calculate split as $cinst.$splitLabelsAndValues(pData)
+
+Begin text block
+Line: {
+Line:   "xAxis": {
+Line:       "type": "category",
+Line:       "data": [split.labels]
+Line:   },
+Line:   "yAxis": {
+Line:       "type": "value"
+Line:   },
+Line:   "series": [
+Line:       {
+Line:           "data": [split.values],
+Line:           "type": "line"
+Line:       }
+Line:   ]
+Line: }
+End text block
+Get text block option
+
+Quit method option

@@ -1,0 +1,117 @@
+[
+	{
+		"name": "$construct",
+		"order": 1,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "columns",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "items",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "rows",
+				"order": 4,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "theme",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "$createPanel",
+		"order": 2,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "buildItems",
+		"order": 3,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "columns",
+				"order": 4,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "label",
+				"order": 9,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "options",
+				"order": 2,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "panel",
+				"order": 8,
+				"type": "kObjectref",
+				"subtype": "omnis-dashboard.oPanel",
+				"sublen": 0
+			},
+			{
+				"name": "rows",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "value",
+				"order": 10,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "render",
+		"order": 4,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "json",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	}
+]

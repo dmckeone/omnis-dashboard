@@ -2,15 +2,15 @@
 	"classtype": "kObjectclass",
 	"omnisversion": "11.2",
 	"omnisbuild": 990040162,
-	"internalversion": 147,
-	"superclass": "oPanel",
+	"internalversion": 32,
+	"superclass": "oSimpleChartBase",
 	"designtaskname": "Startup_Task",
 	"cvardefs": [
 
 	],
 	"ivardefs": [
 		{
-			"name": "iThemes",
+			"name": "iData",
 			"order": 1,
 			"type": "kList",
 			"subtype": "",
@@ -25,13 +25,13 @@
 
 		},
 		"componenttype": "kCompStoreHidden",
-		"createdate": "2025-10-04 17:04:15",
+		"createdate": "2025-10-05 15:16:36",
 		"desc": "",
 		"editor": "",
 		"editordata": "",
 		"external": true,
 		"issupercomponent": false,
-		"moddate": "2025-10-05 15:30:11",
+		"moddate": "2025-10-05 16:09:16",
 		"selfcontained": false,
 		"showascheckedout": false,
 		"userinfo": "",

@@ -1,0 +1,25 @@
+[
+	{
+		"name": "$createPanel",
+		"order": 5,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "label",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "value",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	}
+]

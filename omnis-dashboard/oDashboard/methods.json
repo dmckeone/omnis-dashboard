@@ -641,14 +641,6 @@
 				"subtype": "oPanel",
 				"sublen": 0,
 				"param": 1
-			},
-			{
-				"name": "pName",
-				"order": 3,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000,
-				"param": 2
 			}
 		],
 		"lvardefs": [

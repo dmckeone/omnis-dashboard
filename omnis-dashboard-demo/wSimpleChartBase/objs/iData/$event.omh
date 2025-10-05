@@ -1,0 +1,11 @@
+
+On evAfter
+	Process event and continue
+	
+	Do iData.$search(isclear($ref.label),kTrue,kFalse,kTrue,kTrue)
+	Do iData.$remove(kListDeleteSelected)
+	Redraw iData
+	
+	Calculate iChart.$data as iData
+	Do method render
+	Do iBrowserRef.$redraw()

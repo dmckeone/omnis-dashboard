@@ -1,0 +1,11 @@
+Do iData.$define(label,value)
+Do iData.$add('Mon',120)
+Do iData.$add('Tue',200)
+Do iData.$add('Wed',150)
+Do iData.$add('Thu',80)
+Do iData.$add('Fri',70)
+Do iData.$add('Sat',110)
+Do iData.$add('Sun',130)
+
+Calculate iChart as $libs.//omnis-dashboard//.$objects.oSimpleBarChart.$newref(1,'Bar Chart','default',iData)
+Do iDashboard.$addPanel(iChart)

@@ -1,0 +1,23 @@
+# Split standardized label/value data into the labels and values JSON components
+
+Do labelList.$define(label)
+
+Do valueList.$define()
+Calculate colType as pData.$cols.value.$coltype
+Calculate colSubType as pData.$cols.value.$colsubtype
+Calculate colSubLen as pData.$cols.value.$colsublen
+Do valueList.$cols.$add('value',colType,colSubType,colSubLen)
+
+For pData.$line from 1 to pData.$linecount step 1
+	Do labelList.$add(pData.label)
+	Do valueList.$add(pData.value)
+End For
+
+Calculate labels as OJSON.$listorrowtojson(labelList,kUniTypeCharacter)
+Calculate values as OJSON.$listorrowtojson(valueList,kUniTypeCharacter)
+
+Do result.$define(labels,values)
+Calculate result.labels as labels
+Calculate result.values as values
+
+Quit method result

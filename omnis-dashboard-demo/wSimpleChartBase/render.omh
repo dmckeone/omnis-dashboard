@@ -1,0 +1,3 @@
+
+Calculate json as iDashboard.$renderJSON()
+Calculate iDashboardJSON as OJSON.$formatjson(json)

@@ -1,0 +1,6 @@
+On evClick ## Event Parameters - pRow( Itemreference )
+	Do iData.$add('new',randintrng(1,10000))
+	Calculate iChart.$data as iData
+	Do method render
+	Redraw iData
+	Do iBrowserRef.$redraw()

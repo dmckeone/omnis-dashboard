@@ -1,0 +1,88 @@
+[
+	{
+		"name": "$buildOptions",
+		"order": 5,
+		"pvardefs": [
+			{
+				"name": "pData",
+				"order": 1,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "colSubLen",
+				"order": 7,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "colSubType",
+				"order": 6,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "colType",
+				"order": 5,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "label",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "labelJSON",
+				"order": 8,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "labels",
+				"order": 2,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "option",
+				"order": 10,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "split",
+				"order": 11,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "values",
+				"order": 4,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "valuesJSON",
+				"order": 9,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	}
+]

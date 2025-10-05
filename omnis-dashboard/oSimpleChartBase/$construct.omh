@@ -1,0 +1,4 @@
+
+Do $inherited.$init(pId,pTitle,pTheme)
+
+Calculate $cinst.$data as pData

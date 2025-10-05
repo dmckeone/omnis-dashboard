@@ -1,0 +1,5 @@
+
+Calculate iData as pData
+
+Calculate option as $cinst.$buildOptions(pData)
+Do $cinst.$setJSONOption(option)

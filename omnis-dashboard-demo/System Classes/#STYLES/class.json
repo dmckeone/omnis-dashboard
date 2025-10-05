@@ -2,14 +2,14 @@
 	"classtype": "kSystemtable",
 	"omnisversion": "11.2",
 	"omnisbuild": 990040162,
-	"internalversion": 7,
-	"nextident": 7,
+	"internalversion": 8,
+	"nextident": 8,
 	"properties": {
 		"componenttype": "kCompStoreHidden",
 		"createdate": "2023-10-21 13:41:23",
 		"desc": "",
 		"external": false,
-		"moddate": "2025-10-05 12:41:26",
+		"moddate": "2025-10-05 15:25:49",
 		"showascheckedout": false,
 		"userinfo": "",
 		"vcsrevision": 0,
@@ -509,6 +509,90 @@
 						"backcolor": "RGB(0,0,0)",
 						"backgroundtheme": "kBGThemeNone",
 						"backpattern": 15,
+						"bordercolor": "RGB(0,0,0)",
+						"effect": "kBorderNone",
+						"fontname": "Omnis Windows System",
+						"fontsize": 0,
+						"fontstyle": "kPlain",
+						"forecolor": "RGB(0,0,0)",
+						"textcolor": "kColorWindowText"
+					}
+				}
+			]
+		},
+		{
+			"name": "CtrlDataGrid",
+			"ident": 7,
+			"properties": {
+				"desc": "Standard Data Grid Object",
+				"hasalign": false,
+				"hasbackcolor": false,
+				"hasbackgroundtheme": true,
+				"hasbackpattern": false,
+				"hasbordercolor": false,
+				"haseffect": true,
+				"hasfontname": true,
+				"hasfontsize": true,
+				"hasfontstyle": true,
+				"hasforecolor": false,
+				"hastextcolor": true
+			},
+			"platforms": [
+				{
+					"name": "kMSWindows",
+					"properties": {
+						"align": "kLeftJst",
+						"backcolor": "RGB(0,0,0)",
+						"backgroundtheme": "kBGThemeNone",
+						"backpattern": 0,
+						"bordercolor": "RGB(0,0,0)",
+						"effect": "kBorderCtrlList",
+						"fontname": "Omnis Windows System",
+						"fontsize": 0,
+						"fontstyle": "kPlain",
+						"forecolor": "RGB(0,0,0)",
+						"textcolor": "kColorWindowText"
+					}
+				},
+				{
+					"name": "kUnix",
+					"properties": {
+						"align": "kLeftJst",
+						"backcolor": "RGB(0,0,0)",
+						"backgroundtheme": "kBGThemeNone",
+						"backpattern": 0,
+						"bordercolor": "RGB(0,0,0)",
+						"effect": "kBorderCtrlList",
+						"fontname": "-adobe-helvetica",
+						"fontsize": 0,
+						"fontstyle": "kPlain",
+						"forecolor": "RGB(0,0,0)",
+						"textcolor": "kColorWindowText"
+					}
+				},
+				{
+					"name": "kmacOS",
+					"properties": {
+						"align": "kLeftJst",
+						"backcolor": "RGB(0,0,0)",
+						"backgroundtheme": "kBGThemeNone",
+						"backpattern": 0,
+						"bordercolor": "RGB(0,0,0)",
+						"effect": "kBorderCtrlEdit",
+						"fontname": "Lucida Grande",
+						"fontsize": 12,
+						"fontstyle": "kPlain",
+						"forecolor": "RGB(0,0,0)",
+						"textcolor": "kColorWindowText"
+					}
+				},
+				{
+					"name": "kJavaScript",
+					"properties": {
+						"align": "kLeftJst",
+						"backcolor": "RGB(0,0,0)",
+						"backgroundtheme": "kBGThemeNone",
+						"backpattern": 0,
 						"bordercolor": "RGB(0,0,0)",
 						"effect": "kBorderNone",
 						"fontname": "Omnis Windows System",
