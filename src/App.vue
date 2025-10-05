@@ -15,22 +15,24 @@ const onUserEvent = (id: number, panelType: string, info: PanelUserEvent) => {
 </script>
 
 <template>
-  <div class="h-[97vh] m-2">
-    <div v-if="!dashboard.panels || dashboard.panels.length === 0">No Panels</div>
-    <Panel
-      v-if="dashboard.columns === 1 && dashboard.rows === 1 && dashboard.panels.length === 1"
-      :config="dashboard.panels[0]"
-      @user-event="onUserEvent"
-    />
-    <Dashboard
-      v-else
-      v-model:panels="dashboard.panels"
-      :debug="dashboard.debug"
-      :columns="dashboard.columns"
-      :rows="dashboard.rows"
-      :bottom-margin="40"
-      :theme="dashboard.theme"
-      @user-event="onUserEvent"
-    />
+  <div class="h-full min-h-screen" :data-theme="dashboard.theme">
+    <div class="h-[97vh] m-2">
+      <div v-if="!dashboard.panels || dashboard.panels.length === 0">No Panels</div>
+      <Panel
+        v-if="dashboard.columns === 1 && dashboard.rows === 1 && dashboard.panels.length === 1"
+        :config="dashboard.panels[0]"
+        @user-event="onUserEvent"
+      />
+      <Dashboard
+        v-else
+        v-model:panels="dashboard.panels"
+        :debug="dashboard.debug"
+        :columns="dashboard.columns"
+        :rows="dashboard.rows"
+        :bottom-margin="40"
+        :theme="dashboard.theme"
+        @user-event="onUserEvent"
+      />
+    </div>
   </div>
 </template>

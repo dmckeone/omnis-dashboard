@@ -174,7 +174,8 @@ const gridClasses = computed(() => ({
           :key="panel.id"
           class="panel-height"
           :class="{
-            'bg-neutral-100/75 rounded-xl border-gray-200 shadow-md border': !isContainer(panel),
+            'bg-base-100': isContainer(panel),
+            'bg-base-100 rounded-xl border-gray-200 shadow-md border': !isContainer(panel),
             'overflow-clip': requiresClip(panel),
             'overflow-visible': !requiresClip(panel)
           }"

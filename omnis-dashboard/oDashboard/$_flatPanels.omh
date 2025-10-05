@@ -9,9 +9,8 @@ For panels.$line from 1 to panels.$linecount step 1
 		Calculate dashboard as panel
 		Calculate subpanels as dashboard.$_flatPanels()
 		Do flatPanels.$merge(subpanels)
-	Else
-		Do flatPanels.$add(panel)
 	End If
+	Do flatPanels.$add(panel)
 End For
 
 Quit method flatPanels

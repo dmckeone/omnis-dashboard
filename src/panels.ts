@@ -32,6 +32,7 @@ export interface DashboardPanel<T> extends BasePanel {
   gap?: number
   bottomMargin?: number
   panels?: Array<T>
+  theme?: string
 }
 
 interface DebugPanel extends BasePanel {
@@ -98,7 +99,8 @@ panels["dashboard"] = function dashboard(panel: DashboardPanel<PanelData>) {
       rows: panel?.rows,
       gap: panel?.gap,
       panels: panel?.panels,
-      bottomMargin: panel?.bottomMargin
+      bottomMargin: panel?.bottomMargin,
+      theme: panel?.theme
     }
   }
 }

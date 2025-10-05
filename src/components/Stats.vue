@@ -99,8 +99,8 @@ const displayStats = computed(() => props.stats.map(formatStat))
       <div class="stats stats-vertical flex flex-wrap @md:flex-nowrap @md:stats-horizontal">
         <div v-for="item in displayStats" :key="item.name" class="stat flex flex-col">
           <div class="stat-figure text-info">
-            <span>{{ item.current }}</span>
-            <span class="ml-2 text-xs text-neutral/50">from {{ item.previous }}</span>
+            <p>{{ item.current }}</p>
+            <p class="ml-2 text-xs text-info/30">from {{ item.previous }}</p>
           </div>
           <div class="stat-description text-center mt-2">
             <div
