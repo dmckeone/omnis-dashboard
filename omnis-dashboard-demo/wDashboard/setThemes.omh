@@ -1,0 +1,18 @@
+
+# Set theme on this dashboard and all sub-dashboards
+Calculate iDashboard.$theme as iDaisyThemes.theme
+Calculate panels as iDashboard.$panelsByType('dashboard',kTrue)
+For panels.$line from 1 to panels.$linecount step 1
+	Calculate panel as panels.panel
+	Calculate panel.$theme as iDaisyThemes.theme
+End For
+
+# Set theme on all echarts
+Calculate panels as iDashboard.$panelsByType('echart',kTrue)
+For panels.$line from 1 to panels.$linecount step 1
+	Calculate panel as panels.panel
+	Calculate panel.$theme as iEChartsThemes.theme
+End For
+
+Do method render
+Do iBrowserRef.$redraw()

@@ -1,0 +1,3 @@
+# Override to save special values with replacement content
+
+Quit method $cinst.$saveProp(pName)

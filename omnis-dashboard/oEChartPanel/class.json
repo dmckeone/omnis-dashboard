@@ -2,7 +2,7 @@
 	"classtype": "kObjectclass",
 	"omnisversion": "11.2",
 	"omnisbuild": 990040162,
-	"internalversion": 21,
+	"internalversion": 23,
 	"superclass": "oPanel",
 	"designtaskname": "Startup_Task",
 	"cvardefs": [
@@ -31,7 +31,7 @@
 		"editordata": "",
 		"external": true,
 		"issupercomponent": false,
-		"moddate": "2025-10-05 10:19:29",
+		"moddate": "2025-10-05 13:07:03",
 		"selfcontained": false,
 		"showascheckedout": false,
 		"userinfo": "",

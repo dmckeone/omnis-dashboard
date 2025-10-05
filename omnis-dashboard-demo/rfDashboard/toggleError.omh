@@ -1,0 +1,20 @@
+
+Calculate panels as iDashboard.$panels
+
+If iError
+	Calculate iError as kFalse
+Else
+	Calculate iError as kTrue
+End If
+
+For panels.$line from 1 to panels.$linecount step 1
+	Calculate panel as panels.panel
+	If iError
+		Do panel.$setError("Toggled Failure!")
+	Else
+		Do panel.$clearError()
+	End If
+End For
+
+Do method render
+Do iBrowserRef.$redraw()

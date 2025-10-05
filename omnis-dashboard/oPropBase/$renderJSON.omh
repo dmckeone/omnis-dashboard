@@ -2,4 +2,10 @@
 #
 # May be overriden if panel substitutions are required for certain circumstances
 
-Quit method $cinst.$saveJSON()
+Do $cinst.$defineRender(data)
+For col from 1 to iPropNames.$linecount step 1
+	Calculate name as iPropNames.[col].name
+	Calculate data.[name] as $cinst.$renderProp(name)
+End For
+
+Quit method OJSON.$listorrowtojson(data,kUniTypeCharacter)

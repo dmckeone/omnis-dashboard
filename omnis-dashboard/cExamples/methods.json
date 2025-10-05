@@ -240,6 +240,13 @@
 		],
 		"lvardefs": [
 			{
+				"name": "columns",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
 				"name": "dashboardPanel",
 				"order": 4,
 				"type": "kObjectref",
@@ -247,10 +254,24 @@
 				"sublen": 0
 			},
 			{
+				"name": "options",
+				"order": 1,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
 				"name": "panel",
 				"order": 8,
 				"type": "kObjectref",
 				"subtype": "oPanel",
+				"sublen": 0
+			},
+			{
+				"name": "rows",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
 				"sublen": 0
 			},
 			{

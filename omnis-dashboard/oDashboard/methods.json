@@ -12,36 +12,12 @@
 				"param": 1
 			},
 			{
-				"name": "pTitle",
-				"order": 2,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000,
-				"param": 2
-			},
-			{
-				"name": "pImageUrl",
-				"order": 3,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000,
-				"param": 3
-			},
-			{
-				"name": "pImageAlt",
-				"order": 4,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000,
-				"param": 4
-			},
-			{
 				"name": "pOptional",
 				"order": 5,
 				"type": "kRow",
 				"subtype": "",
 				"sublen": 0,
-				"param": 5
+				"param": 2
 			}
 		],
 		"lvardefs": [
@@ -161,6 +137,13 @@
 				"type": "kCharacter",
 				"subtype": "kSimplechar",
 				"sublen": 100000000
+			},
+			{
+				"name": "themes",
+				"order": 2,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
 			}
 		]
 	},
@@ -295,7 +278,7 @@
 		]
 	},
 	{
-		"name": "$debug",
+		"name": "$panels",
 		"order": 6,
 		"pvardefs": [
 
@@ -305,8 +288,18 @@
 		]
 	},
 	{
-		"name": "$debug.$assign",
+		"name": "$debug",
 		"order": 7,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$debug.$assign",
+		"order": 8,
 		"pvardefs": [
 			{
 				"name": "pDebug",
@@ -323,7 +316,7 @@
 	},
 	{
 		"name": "$columns",
-		"order": 8,
+		"order": 9,
 		"pvardefs": [
 
 		],
@@ -333,7 +326,7 @@
 	},
 	{
 		"name": "$columns.$assign",
-		"order": 9,
+		"order": 10,
 		"pvardefs": [
 			{
 				"name": "pColumns",
@@ -350,7 +343,7 @@
 	},
 	{
 		"name": "$rows",
-		"order": 10,
+		"order": 11,
 		"pvardefs": [
 
 		],
@@ -360,7 +353,7 @@
 	},
 	{
 		"name": "$rows.$assign",
-		"order": 11,
+		"order": 12,
 		"pvardefs": [
 			{
 				"name": "pRows",
@@ -377,7 +370,7 @@
 	},
 	{
 		"name": "$title",
-		"order": 12,
+		"order": 13,
 		"pvardefs": [
 
 		],
@@ -387,7 +380,7 @@
 	},
 	{
 		"name": "$title.$assign",
-		"order": 13,
+		"order": 14,
 		"pvardefs": [
 			{
 				"name": "pTitle",
@@ -404,7 +397,7 @@
 	},
 	{
 		"name": "$gap",
-		"order": 14,
+		"order": 15,
 		"pvardefs": [
 
 		],
@@ -414,7 +407,7 @@
 	},
 	{
 		"name": "$gap.$assign",
-		"order": 15,
+		"order": 16,
 		"pvardefs": [
 			{
 				"name": "pGap",
@@ -431,7 +424,7 @@
 	},
 	{
 		"name": "$bottomMargin",
-		"order": 16,
+		"order": 17,
 		"pvardefs": [
 
 		],
@@ -441,7 +434,7 @@
 	},
 	{
 		"name": "$bottomMargin.$assign",
-		"order": 17,
+		"order": 18,
 		"pvardefs": [
 			{
 				"name": "pBottomMargin",
@@ -458,7 +451,7 @@
 	},
 	{
 		"name": "$theme",
-		"order": 18,
+		"order": 19,
 		"pvardefs": [
 
 		],
@@ -468,7 +461,7 @@
 	},
 	{
 		"name": "$theme.$assign",
-		"order": 19,
+		"order": 20,
 		"pvardefs": [
 			{
 				"name": "pTheme",
@@ -491,7 +484,7 @@
 	},
 	{
 		"name": "$loadProp",
-		"order": 20,
+		"order": 21,
 		"pvardefs": [
 			{
 				"name": "pName",
@@ -543,7 +536,7 @@
 	},
 	{
 		"name": "$saveProp",
-		"order": 21,
+		"order": 22,
 		"pvardefs": [
 			{
 				"name": "pName",
@@ -594,8 +587,52 @@
 		]
 	},
 	{
+		"name": "$renderProp",
+		"order": 23,
+		"pvardefs": [
+			{
+				"name": "pName",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "panel",
+				"order": 5,
+				"type": "kObjectref",
+				"subtype": "oPanel",
+				"sublen": 0
+			},
+			{
+				"name": "panelJSON",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "panels",
+				"order": 4,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "savedPanels",
+				"order": 2,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
 		"name": "$addPanel",
-		"order": 22,
+		"order": 24,
 		"pvardefs": [
 			{
 				"name": "pPanel",
@@ -626,7 +663,7 @@
 	},
 	{
 		"name": "$findPanel",
-		"order": 23,
+		"order": 25,
 		"pvardefs": [
 			{
 				"name": "pId",
@@ -655,8 +692,52 @@
 		]
 	},
 	{
+		"name": "$_flatPanels",
+		"order": 26,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "dashboard",
+				"order": 5,
+				"type": "kObjectref",
+				"subtype": "oDashboard",
+				"sublen": 0
+			},
+			{
+				"name": "flatPanels",
+				"order": 1,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "panel",
+				"order": 2,
+				"type": "kObjectref",
+				"subtype": "oPanel",
+				"sublen": 0
+			},
+			{
+				"name": "panels",
+				"order": 3,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "subpanels",
+				"order": 4,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
 		"name": "$panelsByType",
-		"order": 24,
+		"order": 27,
 		"pvardefs": [
 			{
 				"name": "pType",
@@ -665,6 +746,14 @@
 				"subtype": "kSimplechar",
 				"sublen": 100000000,
 				"param": 1
+			},
+			{
+				"name": "pRecursive",
+				"order": 4,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 2
 			}
 		],
 		"lvardefs": [
@@ -673,6 +762,13 @@
 				"order": 2,
 				"type": "kInteger",
 				"subtype": "k64bitint",
+				"sublen": 0
+			},
+			{
+				"name": "panel",
+				"order": 5,
+				"type": "kObjectref",
+				"subtype": "oPanel",
 				"sublen": 0
 			},
 			{
@@ -686,7 +782,7 @@
 	},
 	{
 		"name": "$removePanel",
-		"order": 25,
+		"order": 28,
 		"pvardefs": [
 			{
 				"name": "pId",
@@ -709,7 +805,7 @@
 	},
 	{
 		"name": "$reorderPanels",
-		"order": 26,
+		"order": 29,
 		"pvardefs": [
 			{
 				"name": "pJSON",
@@ -788,7 +884,7 @@
 	},
 	{
 		"name": "$loadPanelsJSON",
-		"order": 27,
+		"order": 30,
 		"pvardefs": [
 			{
 				"name": "pJSON",
@@ -853,7 +949,7 @@
 	},
 	{
 		"name": "$panelForType",
-		"order": 28,
+		"order": 31,
 		"pvardefs": [
 			{
 				"name": "pType",

@@ -1,0 +1,3 @@
+# Override to declare different serialization props, compared with internal storage props
+
+Do $cinst.$defineProps(pRow)

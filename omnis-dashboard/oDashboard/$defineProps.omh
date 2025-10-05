@@ -1,5 +1,5 @@
 
-Do method buildThemes
+Do method buildThemes Returns iThemes
 
 Do panels.$define(panel)
 Do pRow.$define(id,type,panels,debug,drag,columns,rows,title,gap,bottomMargin,theme)

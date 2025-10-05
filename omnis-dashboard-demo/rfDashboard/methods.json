@@ -1,0 +1,162 @@
+[
+	{
+		"name": "$construct",
+		"order": 1,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$destruct",
+		"order": 2,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "reorderPanels",
+		"order": 5,
+		"clientexec": false,
+		"pvardefs": [
+			{
+				"name": "pPayload",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "buildItems",
+		"order": 6,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "debugPanel",
+				"order": 6,
+				"type": "kObjectref",
+				"subtype": "omnis-dashboard.oDebugPanel",
+				"sublen": 0
+			},
+			{
+				"name": "loadingPanel",
+				"order": 7,
+				"type": "kObjectref",
+				"subtype": "omnis-dashboard.oLoadingPanel",
+				"sublen": 0
+			},
+			{
+				"name": "panel",
+				"order": 8,
+				"type": "kObjectref",
+				"subtype": "omnis-dashboard.oPanel",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "render",
+		"order": 7,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "json",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "toggleLoading",
+		"order": 8,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "panel",
+				"order": 2,
+				"type": "kObjectref",
+				"subtype": "omnis-dashboard.oPanel",
+				"sublen": 0
+			},
+			{
+				"name": "panels",
+				"order": 1,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "toggleError",
+		"order": 9,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "panel",
+				"order": 2,
+				"type": "kObjectref",
+				"subtype": "omnis-dashboard.oPanel",
+				"sublen": 0
+			},
+			{
+				"name": "panels",
+				"order": 1,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "setThemes",
+		"order": 10,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "panel",
+				"order": 2,
+				"type": "kObjectref",
+				"subtype": "omnis-dashboard.oPanel",
+				"sublen": 0
+			},
+			{
+				"name": "panels",
+				"order": 1,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	}
+]

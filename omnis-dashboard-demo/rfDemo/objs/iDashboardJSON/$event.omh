@@ -1,7 +1,0 @@
-On evInput
-	Process event and continue
-	
-On evAfter
-	Do iDashboard.$loadJSON(iDashboardJSON)
-	Do method save
-	Do $cfield.$redraw()

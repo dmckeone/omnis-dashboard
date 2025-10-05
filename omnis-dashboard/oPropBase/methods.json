@@ -80,7 +80,7 @@
 		]
 	},
 	{
-		"name": "$setDefaults",
+		"name": "$defineRender",
 		"order": 7,
 		"pvardefs": [
 			{
@@ -97,8 +97,25 @@
 		]
 	},
 	{
-		"name": "$loadProp",
+		"name": "$setDefaults",
 		"order": 8,
+		"pvardefs": [
+			{
+				"name": "pRow",
+				"order": 1,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$loadProp",
+		"order": 9,
 		"pvardefs": [
 			{
 				"name": "pName",
@@ -143,7 +160,7 @@
 	},
 	{
 		"name": "$saveProp",
-		"order": 9,
+		"order": 10,
 		"pvardefs": [
 			{
 				"name": "pName",
@@ -159,10 +176,17 @@
 		]
 	},
 	{
-		"name": "$renderJSON",
-		"order": 10,
+		"name": "$renderProp",
+		"order": 11,
 		"pvardefs": [
-
+			{
+				"name": "pName",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
 		],
 		"lvardefs": [
 
@@ -170,7 +194,7 @@
 	},
 	{
 		"name": "$saveJSON",
-		"order": 11,
+		"order": 12,
 		"pvardefs": [
 			{
 				"name": "pJSON",
@@ -206,8 +230,38 @@
 		]
 	},
 	{
+		"name": "$renderJSON",
+		"order": 13,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "col",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "data",
+				"order": 3,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "name",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
 		"name": "$loadJSON",
-		"order": 12,
+		"order": 14,
 		"pvardefs": [
 			{
 				"name": "pJSON",
@@ -244,7 +298,7 @@
 	},
 	{
 		"name": "$allowOptional",
-		"order": 13,
+		"order": 15,
 		"pvardefs": [
 			{
 				"name": "pName",
@@ -261,7 +315,7 @@
 	},
 	{
 		"name": "$assignOptional",
-		"order": 14,
+		"order": 16,
 		"pvardefs": [
 			{
 				"name": "pOptional",

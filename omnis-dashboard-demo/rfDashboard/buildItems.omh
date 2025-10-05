@@ -1,0 +1,8 @@
+
+Do code method omnis-dashboard.cExamples/examplePanels Returns iDashboard
+
+Calculate iRows as iDashboard.$rows
+Calculate iColumns as iDashboard.$columns
+
+Do code method omnis-dashboard.oEChartPanel/buildThemes Returns iEChartsThemes
+Do code method omnis-dashboard.oDashboard/buildThemes Returns iDaisyThemes

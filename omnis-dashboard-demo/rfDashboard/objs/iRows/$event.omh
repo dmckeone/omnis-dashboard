@@ -1,0 +1,5 @@
+On evAfter
+	Process event and continue
+	Calculate iDashboard.$rows as iRows
+	Do method render
+	Do iBrowserRef.$redraw()

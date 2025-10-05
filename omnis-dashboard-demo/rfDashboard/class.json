@@ -1,0 +1,146 @@
+{
+	"classtype": "kRemoteForm",
+	"omnisversion": "11.2",
+	"omnisbuild": 990040162,
+	"internalversion": 401,
+	"designtaskname": "rtWeb",
+	"nextident": 1019,
+	"lastgroupident": 0,
+	"cvardefs": [
+
+	],
+	"ivardefs": [
+		{
+			"name": "iBrowserRef",
+			"order": 3,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "iColumns",
+			"order": 9,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "iDaisyThemes",
+			"order": 2,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "iDashboard",
+			"order": 6,
+			"type": "kObjectref",
+			"subtype": "omnis-dashboard.oDashboard",
+			"sublen": 0
+		},
+		{
+			"name": "iDashboardJSON",
+			"order": 4,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iEChartsThemes",
+			"order": 1,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "iError",
+			"order": 7,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kFalse"
+		},
+		{
+			"name": "iLoading",
+			"order": 5,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kFalse"
+		},
+		{
+			"name": "iRows",
+			"order": 8,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		}
+	],
+	"properties": {
+		"aligntogrid": false,
+		"alpha": 255,
+		"alwaysenabledobject": "",
+		"animatelayouttransitions": true,
+		"backalpha": 255,
+		"backcolor": "kColorDefault",
+		"backpattern": 1,
+		"cancelkeyobject": "",
+		"canremotedebugwhenlocked": false,
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componentinfo": {
+
+		},
+		"componenttype": "kCompStoreHidden",
+		"contextmenu": "",
+		"createdate": "2025-05-21 12:40:38",
+		"currentlayoutbreakpoint": 1024,
+		"defaultappearance": "kAppearanceiOS",
+		"desc": "",
+		"designguides": "",
+		"designshowmobiletitle": true,
+		"disabledefaultcontextmenu": false,
+		"editor": "",
+		"editordata": "",
+		"events": "",
+		"external": true,
+		"forecolor": "kColorDefault",
+		"horzgrid": 8,
+		"horzscroll": false,
+		"inheritedorder": 0,
+		"issupercomponent": false,
+		"layoutbreakpoints": "1024,1600",
+		"layouttype": "kLayoutTypeResponsive",
+		"left": 285,
+		"menulineheight": 44,
+		"moddate": "2025-10-05 13:57:29",
+		"okkeyobject": "",
+		"serverlessclient": false,
+		"showascheckedout": false,
+		"showgrid": false,
+		"sizetogrid": false,
+		"startfield": 0,
+		"title": {
+			"type": 0,
+			"calc": "New remote form"
+		},
+		"top": 268,
+		"userinfo": "",
+		"vcsrevision": 0,
+		"version": "",
+		"vertgrid": 8,
+		"vertscroll": false
+	},
+	"layout": {
+		"width": 1681,
+		"height": 787,
+		"1024": {
+			"height": 0,
+			"padding": 2
+		},
+		"1600": {
+			"height": 0,
+			"padding": 2
+		}
+	}
+}

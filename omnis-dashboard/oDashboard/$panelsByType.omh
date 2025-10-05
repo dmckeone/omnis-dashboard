@@ -1,6 +1,10 @@
 # Get all panels of a specific type (where type is the string identifier for the component, like "echart" or "debug" or "loading")
 
-Calculate panels as iProps.panels
+If pRecursive
+	Calculate panels as $cinst.$_flatPanels()
+Else
+	Calculate panels as iProps.panels
+End If
 
 Do panels.$search($ref.panel.$panelType=pType,kTrue,kFalse,kTrue,kTrue)
 Do panels.$remove(kListKeepSelected)

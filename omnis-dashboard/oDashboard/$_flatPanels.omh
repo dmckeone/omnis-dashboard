@@ -1,0 +1,17 @@
+# Walk all panels (including dashboard containers) and flatten out the panels
+
+Do flatPanels.$define(panel)
+
+Calculate panels as iProps.panels
+For panels.$line from 1 to panels.$linecount step 1
+	Calculate panel as panels.panel
+	If panel.$panelType='dashboard'
+		Calculate dashboard as panel
+		Calculate subpanels as dashboard.$_flatPanels()
+		Do flatPanels.$merge(subpanels)
+	Else
+		Do flatPanels.$add(panel)
+	End If
+End For
+
+Quit method flatPanels

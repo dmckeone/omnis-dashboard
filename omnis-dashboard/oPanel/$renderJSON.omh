@@ -1,9 +1,9 @@
 # Dispatch the correct panel, based on status
 
-If iLoading
-	Quit method iLoadingPanel.$renderJSON()
-Else If iError
+If iError
 	Quit method iErrorPanel.$renderJSON()
+Else If iLoading
+	Quit method iLoadingPanel.$renderJSON()
 Else
 	Quit method $inherited.$renderJSON()
 End If

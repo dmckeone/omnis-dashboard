@@ -1,5 +1,9 @@
 
-Calculate dashboardPanel as $libs.//omnis-dashboard//.$objects.oDashboard.$newref()
+Do options.$define(rows,columns)
+Calculate options.rows as 3
+Calculate options.columns as 3
+
+Calculate dashboardPanel as $libs.//omnis-dashboard//.$objects.oDashboard.$newref(-1,options)
 
 # ------------------
 # 1 - STATS

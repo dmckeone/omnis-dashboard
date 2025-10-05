@@ -1,0 +1,16 @@
+
+Calculate panels as iDashboard.$panels
+
+If iLoading
+	Calculate iLoading as kFalse
+Else
+	Calculate iLoading as kTrue
+End If
+
+For panels.$line from 1 to panels.$linecount step 1
+	Calculate panel as panels.panel
+	Calculate panel.$loading as iLoading
+End For
+
+Do method render
+Do iBrowserRef.$redraw()

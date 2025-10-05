@@ -1,6 +1,8 @@
 
 
 Switch pType
+	Case 'dashboard'
+		Quit method $clib.$objects.oDashboard.$newref()
 	Case 'debug'
 		Quit method $clib.$objects.oDebugPanel.$newref()
 	Case 'loading'
